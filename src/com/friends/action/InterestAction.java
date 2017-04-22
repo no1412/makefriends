@@ -1,6 +1,7 @@
 package com.friends.action;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -10,9 +11,11 @@ import org.apache.struts2.interceptor.ServletRequestAware;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
+import com.friends.common.Constant;
 import com.friends.dao.BaseAction;
 import com.friends.model.Interest;
 import com.friends.model.InterestGroup;
+import com.friends.model.User;
 
 @Controller
 @Scope("prototype")
@@ -33,6 +36,14 @@ public class InterestAction extends BaseAction<Interest> implements ServletReque
 	 * @throws
 	 */
 	public String getAllInfos(){
+	    User user = (User) request.getSession().getAttribute(Constant.USER);
+	    if (user != null) {
+	        List<Integer> userLikedInterestGroupIds = new ArrayList<Integer>();
+            for (InterestGroup interestGroup : user.getInterestGroups()) {
+                userLikedInterestGroupIds.add(interestGroup.getId());
+            }
+            request.setAttribute("userLikedInterestGroupIds", userLikedInterestGroupIds);
+        }
 		String interestId = request.getParameter("interestId");
 		List<Interest> list_interest = this.interestService.getInterestInfos();
 		request.setAttribute("list_interest", list_interest);

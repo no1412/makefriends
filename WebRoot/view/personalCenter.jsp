@@ -24,6 +24,9 @@
 	<script>
 		new WOW().init();
 		getTop();
+        //初试化js的当前user对象
+        var user = "${session.user}";
+        var userId = "${session.user.id}";
 	</script>
 	<!--[if lt IE 9]>
 	    <script src="http://static.sfcdn.org/dep/js/html5shiv.min.js "></script>
@@ -205,81 +208,24 @@
 				<h3 style="color: #000000;margin-top: 0;">我的收藏</h3>
 			</div>
 			<hr class="middle_right_hr">
-			<div class="right_div rounded wow fadeInUp">
-				<h3 class="h3 right_h3">Java开发小组讨论</h3>
-				<hr class="right_hr" />
-				<div class="right_imgdiv">
-					<a href="${pageContext.request.contextPath }/view/interestGroup.jsp"><img class="right_img" src="${pageContext.request.contextPath }/img/1.jpg" /></a>
+			<s:iterator id="interestGroup" value="#request.list_interestGroup">
+				<div class="right_div rounded wow fadeInUp">
+					<h3 class="h3 right_h3"><s:property value="#interestGroup.groupName"/></h3>
+					<hr class="right_hr" />
+					<div class="right_imgdiv">
+						<a href="${pageContext.request.contextPath }/interestGroup_seeInterestGroup.action?interestGroupId=<s:property value='#interestGroup.id'/>"><img class="right_img" src="${pageContext.request.contextPath }/img/1.jpg" /></a>
+					</div>
+					<p class="right_p">
+						<s:property value="#interestGroup.groupDesc"/>
+					</p>
+					<div class="right_indiv">
+						<span class="glyphicon glyphicon-user right_span1" title="用户数量"><s:property value="#interestGroup.users.size()"/></span>
+                        <span class="glyphicon glyphicon-edit right_span1" title="帖子数量"><s:property value="#interestGroup.userDynamics.size()"/></span>
+						<span title="收藏" id="<s:property value="#interestGroup.id"/>" class="icon-heart icon-large right_click right_span1 right_span2"></span>
+					</div>
 				</div>
-				<p class="right_p">
-					有人问了上帝，“喜欢”与“爱”有什么区别呢？ 上帝指了指一个孩子，只见孩子站在花前， 久久不肯离开，最后，孩子被花的美丽迷醉，不由的伸出手把花摘下来。 上帝说，这就是喜 欢。接着，上帝指了指另一个孩子，只见孩子满头大汗的在给花浇水，又担心花被烈日晒着， 自己站在花前。 上帝说这就是爱。 . 喜欢是为了得到，而爱却是为了付出，这就是最本质 的区别。花若盛开，蝴蝶自来！你若精彩，天自安排！
-				</p>
-				<div class="right_indiv">
-					<span class="glyphicon glyphicon-user right_span1" title="用户数量">54893</span>
-					<span class="glyphicon glyphicon-edit right_span1" title="帖子数量">89653245</span>
-					<span title="收藏" class="icon-heart icon-large right_click right_span1 right_span2"></span>
-				</div>
-			</div>
-			<div class="right_div rounded wow fadeInUp">
-
-				<h3 class="h3 right_h3">多面体</h3>
-
-				<hr class="right_hr" />
-
-				<div class="right_imgdiv">
-
-					<a href="${pageContext.request.contextPath }/view/interestGroup.jsp"><img class="right_img" src="${pageContext.request.contextPath }/img/2.jpg" /></a>
-
-				</div>
-
-				<p class="right_p">
-
-					最珍重的事应该最沉默。不肯说给人听，不肯拿给人看，放在心底，生怕语言扭曲它，空气氧 化它。日久月深成了一个人的心血，我们才成为了人群中彼此不同的人。
-
-				</p>
-
-				<div class="right_indiv">
-
-					<span class="glyphicon glyphicon-user right_span1" title="用户数量">4532</span>
-
-					<span class="glyphicon glyphicon-edit right_span1" title="帖子数量">896345245</span>
-
-					<span title="收藏" class="icon-heart icon-large right_click right_span1 right_span2"></span>
-
-				</div>
-
-			</div>
-
-			<div class="right_div rounded wow fadeInUp">
-
-				<h3 class="h3 right_h3">QQ飞车游戏</h3>
-
-				<hr class="right_hr" />
-
-				<div class="right_imgdiv">
-
-					<a href="${pageContext.request.contextPath }/view/interestGroup.jsp"><img class="right_img" src="${pageContext.request.contextPath }/img/5.jpg" /></a>
-
-				</div>
-
-				<p class="right_p">
-
-					"男人不要觉得有很多备胎多光荣，因为只有破车才需要备胎。女人也不要觉得有很多追求者多骄傲，因为只有廉价货才被哄抢！"所以做一个限量版的自己 ！
-
-				</p>
-
-				<div class="right_indiv">
-
-					<span class="glyphicon glyphicon-user right_span1" title="用户数量">745</span>
-
-					<span class="glyphicon glyphicon-edit right_span1" title="帖子数量">8978245</span>
-
-					<span title="收藏" class="icon-heart icon-large right_click right_span1 right_span2"></span>
-
-				</div>
-
-			</div>
-
+			</s:iterator>
+			
 		</div>
 	</div>
 

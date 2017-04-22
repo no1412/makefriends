@@ -11,14 +11,29 @@ $(function() {
 /* 点击收藏颜色转换 */
 $(function() {
 	var changeSys = function() {
+		if(user == "") {
+			alert("请登录");
+			return;
+		}
+		var interestGroupId = $(this).attr("id");
 		if ($(this).hasClass('right_span2')) {
+			var deleted = true;
 			$(this).removeClass('right_span2');
 			$(this).addClass("right_span3");
+			sendCollectInfors(userId, interestGroupId, deleted);
 		} else {
+			var deleted = false;
 			$(this).removeClass('right_span3');
 			$(this).addClass("right_span2");
+			sendCollectInfors(userId, interestGroupId, deleted);
 		}
 	};
+	function sendCollectInfors(userId, interestGroupId, deleted) {
+		var url = "interestGroupAjax_addLikedInterestGroup.action";
+		$.post(url,{"userId":userId, "interestGroupId":interestGroupId, "deleted":deleted},function(msg){
+			alert(msg);
+		});
+	}
 	$(".right_click").each(function() {
 		$(this).bind('click', changeSys);
 	});

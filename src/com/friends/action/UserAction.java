@@ -1,12 +1,17 @@
 package com.friends.action;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
+import com.friends.common.Constant;
 import com.friends.dao.BaseAction;
+import com.friends.model.InterestGroup;
 import com.friends.model.User;
 
 @Controller
@@ -64,6 +69,10 @@ public class UserAction extends BaseAction<User> implements ServletRequestAware{
 	 * @throws
 	 */
 	public String getMyCollections(){
+	    User user = (User) request.getSession().getAttribute(Constant.USER);
+	    List<InterestGroup> list_interestGroup = new ArrayList<InterestGroup>();
+	    list_interestGroup.addAll(user.getInterestGroups());
+	    request.setAttribute("list_interestGroup", list_interestGroup);
 		return "getMyCollections";
 	}
 	

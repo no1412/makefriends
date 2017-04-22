@@ -32,6 +32,9 @@
 	<script>
 		new WOW().init();
 		getTop();
+		//初试化js的当前user对象
+		var user = "${session.user}";
+		var userId = "${session.user.id}";
 	</script>
 
 	<!--[if lt IE 9]>
@@ -349,14 +352,17 @@
 						<s:property value="#interestGroup.groupDesc"/>
 					</p>
 					<div class="right_indiv">
-						<span class="glyphicon glyphicon-user right_span1" title="用户数量">54893</span>
-						<span class="glyphicon glyphicon-edit right_span1" title="帖子数量">89653245</span>
-						<span  title="收藏" class="icon-heart icon-large right_click right_span1 right_span2"></span>
+						<span class="glyphicon glyphicon-user right_span1" title="用户数量"><s:property value="#interestGroup.users.size()"/></span>
+						<span class="glyphicon glyphicon-edit right_span1" title="帖子数量"><s:property value="#interestGroup.userDynamics.size()"/></span>
+						<s:if test="#request.userLikedInterestGroupIds.contains(#interestGroup.id)">
+							<span  title="收藏" id="<s:property value="#interestGroup.id"/>" class="icon-heart icon-large right_click right_span1 right_span2"></span>
+						</s:if>
+						<s:else>
+						    <span  title="收藏" id="<s:property value="#interestGroup.id"/>" class="icon-heart icon-large right_click right_span1 right_span3"></span>
+						</s:else>
 					</div>
 				</div>
 			</s:iterator>
-			
-
 		</div>
 	</div>
 	<script>

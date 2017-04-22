@@ -35,6 +35,9 @@
 	<script>
 		new WOW().init();
 		getTop();
+		//初试化js的当前user对象
+        var user = "${session.user}";
+        var userId = "${session.user.id}";
 	</script>
 </head>
 
@@ -306,9 +309,14 @@
 					<span  title="发表" class="icon-edit">&nbsp;发表</span>
 				</a>
 		    </s:if>
-			<span class="glyphicon glyphicon-user right_span1" title="用户数量"><b style="color: #000000;font-size: 15px;">5432</b></span>&nbsp;&nbsp;&nbsp;
-			<span class="glyphicon glyphicon-edit right_span1" title="帖子数量"><b style="color: #000000;font-size: 15px;">896345</b></span>&nbsp;&nbsp;&nbsp;
-			<span id="love_02" onclick="spanf(id)" title="收藏" class="icon-heart icon-large head_span1 head_span2"></span>
+			<span class="glyphicon glyphicon-user right_span1" title="用户数量"><b style="color: #000000;font-size: 15px;"><s:property value="#request.interestGroup.users.size()"/></b></span>&nbsp;&nbsp;&nbsp;
+			<span class="glyphicon glyphicon-edit right_span1" title="帖子数量"><b style="color: #000000;font-size: 15px;"><s:property value="#request.interestGroup.userDynamics.size()"/></b></span>&nbsp;&nbsp;&nbsp;
+			<s:if test="#request.userLikedInterestGroupIds.contains(#request.interestGroup.id)">
+				<span id="<s:property value="#request.interestGroup.id"/>" title="收藏" class="icon-heart icon-large head_span1 head_span2"></span>
+			</s:if>
+			<s:else>
+                <span id="<s:property value="#request.interestGroup.id"/>" title="收藏" class="icon-heart icon-large head_span1 head_span3"></span>
+            </s:else>
 		</div>
 	</div>
 

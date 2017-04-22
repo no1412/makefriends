@@ -65,5 +65,13 @@
     			<param name="callbackParameter">data</param>
     		</result>
     	</action>
+    	<action name="interestGroupAjax_*" class="com.friends.action.InterestGroupAjaxAction" method="{1}">
+            <result name="success" type="json">
+                <!-- result是action中设置的变量名，也是页面需要返回的数据，该变量必须有setter和getter方法 -->
+                <param name="root">result</param>
+                <!-- callbackParameter是ajax回调函数中设置的变量名，也是页面需要返回的数据-->
+                <param name="callbackParameter">data</param>
+            </result>
+        </action>
     </package>
 </struts>

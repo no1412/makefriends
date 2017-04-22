@@ -34,18 +34,37 @@ function getTop() {
 }
 
 
-/*点击收藏颜色转换*/
-function spanf(id) {
-	var id = '#' + id;
-	if ($(id).hasClass("head_span2")) {
-		$(id).removeClass('head_span2');
-		$(id).addClass("head_span3");
-	} else {
-		$(id).removeClass('head_span3');
-		$(id).addClass("head_span2");
+/* 点击收藏颜色转换 */
+$(function() {
+	var changeSys = function() {
+		if(user == "") {
+			alert("请登录");
+			return;
+		}
+		var interestGroupId = $(this).attr("id");
+		console.log($(this));
+		if ($(this).hasClass('head_span2')) {
+			var deleted = true;
+			$(this).removeClass('head_span2');
+			$(this).addClass("head_span3");
+			sendCollectInfors(userId, interestGroupId, deleted);
+		} else {
+			var deleted = false;
+			$(this).removeClass('head_span3');
+			$(this).addClass("head_span2");
+			sendCollectInfors(userId, interestGroupId, deleted);
+		}
+	};
+	function sendCollectInfors(userId, interestGroupId, deleted) {
+		var url = "interestGroupAjax_addLikedInterestGroup.action";
+		$.post(url,{"userId":userId, "interestGroupId":interestGroupId, "deleted":deleted},function(msg){
+			alert(msg);
+		});
 	}
-}
-
+	$(".head_span1").each(function() {
+		$(this).bind('click', changeSys);
+	});
+});
 /*帖子回复隐藏展示效果*/
 $(function(){
 	var changeA = function(){

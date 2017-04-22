@@ -309,7 +309,7 @@
 		<div style="width: 900px;height: 150px;margin-left:140px;margin-top: 130px;">
 			<p style="font-size: 25px;font-weight: 600;color: white;font-family: '新宋体';"><s:property value="#request.userDynamic.user.nickName"/></p>
 			<div class="post_div1">
-				<span class="glyphicon glyphicon-eye-open" title="浏览量">4222</span>&nbsp;&nbsp;
+				<span class="glyphicon glyphicon-eye-open" title="浏览量"><s:property value="#request.userDynamic.watchCount" /></span>&nbsp;&nbsp;
 				<span class="glyphicon glyphicon-comment" title="回复数量"><s:property value="#request.userDynamic.comments.size()" /></span>&nbsp;&nbsp;
 			</div>
 		</div>
@@ -354,17 +354,16 @@
     	时间：2016-03-07
     	描述：回复内容
     -->
-	<div class="container post_div">
-		<s:if test="#session.user!=null">
+	<s:if test="#session.user!=null">
+		<div class="container post_div">
 			<div style="margin:10px 0 10px 50px;">
 				<a href="#" data-toggle="modal" data-target="#respone-modal" class="button button-rounded button-raised button-primary">
 					<span title="发表" class="icon-edit">&nbsp;回复</span>
 				</a>
 				<!-- <a href="#" class="glyphicon glyphicon-sort post_a">倒叙查看</a> -->
 			</div>
-		</s:if>
-
-        <s:iterator id="comment" status="s" value="#request.userDynamic.comments">
+		
+	       <s:iterator id="comment" status="s" value="#request.userDynamic.comments">
 			<hr class="post_hr"/>
 			<div class="row col-lg-12 post_div7">
 				<!--左部-->
@@ -418,9 +417,10 @@
 					</div>
 				</div>
 			</div>
-        </s:iterator>
-		
-	</div>
+	       </s:iterator>
+			
+		</div>
+	</s:if>
 	<!--
 			作者：756048962@qq.com
 			时间：2015-12-20

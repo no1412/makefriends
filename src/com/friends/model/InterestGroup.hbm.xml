@@ -14,11 +14,11 @@
 		<property name="groupDesc" type="string"></property>
 		<property name="applyReason" type="string"></property>
 		<many-to-one name="interest" class="Interest" column="interest_id"></many-to-one>
-		<set name="users" table="user_interestGroup">
+		<set name="users" table="user_interestGroup" lazy="false" inverse="true">
 			<key column="interestGroup_id"></key>
 			<many-to-many class="User" column="user_id"></many-to-many>
 		</set>
-		<set name="userDynamics" table="userDynamics">
+		<set name="userDynamics" lazy="false" table="userDynamics">
 			<key column="interestGroup_id"></key>
 			<one-to-many class="UserDynamic"/>
 		</set>

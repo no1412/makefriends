@@ -12,14 +12,28 @@ $(function() {
 $(function(){
 	var changeSys = function(){
   		if($(this).hasClass('right_span2')){
-  			$(this).removeClass('right_span2');
-			$(this).addClass("right_span3");
+  			$(this).parent().siblings().fadeOut(2000, function () {
+  			});
+  			$(this).parent().fadeOut(2000, function () {
+  				$(this).parent().remove();
+  			});
+  			var interestGroupId = $(this).attr("id");
+  			var deleted = true;
+  			sendCollectInfors(userId, interestGroupId, deleted);
+  			/*$(this).removeClass('right_span2');
+			$(this).addClass("right_span3");*/
   		}
   		else{
   			$(this).removeClass('right_span3');
 			$(this).addClass("right_span2");
   		}
 	};
+	function sendCollectInfors(userId, interestGroupId, deleted) {
+		var url = "interestGroupAjax_addLikedInterestGroup.action";
+		$.post(url,{"userId":userId, "interestGroupId":interestGroupId, "deleted":deleted},function(msg){
+			alert(msg);
+		});
+	}
 	$(".right_click").each(
 		function() {
 			$(this).bind('click', changeSys);

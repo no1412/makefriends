@@ -1,5 +1,6 @@
 package com.friends.action;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -8,8 +9,10 @@ import org.apache.struts2.interceptor.ServletRequestAware;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
+import com.friends.common.Constant;
 import com.friends.dao.BaseAction;
 import com.friends.model.InterestGroup;
+import com.friends.model.User;
 import com.friends.model.UserDynamic;
 
 @Controller
@@ -35,6 +38,14 @@ public class InterestGroupAction extends BaseAction<InterestGroup> implements Se
 	public String seeInterestGroup(){
 		String interestGroupId = request.getParameter("interestGroupId");
 		if (interestGroupId!=null) {
+		    User user = (User) request.getSession().getAttribute(Constant.USER);
+	        if (user != null) {
+	            List<Integer> userLikedInterestGroupIds = new ArrayList<Integer>();
+	            for (InterestGroup interestGroup : user.getInterestGroups()) {
+	                userLikedInterestGroupIds.add(interestGroup.getId());
+	            }
+	            request.setAttribute("userLikedInterestGroupIds", userLikedInterestGroupIds);
+	        }
 			InterestGroup interestGroup = this.interestGroupService.getById(Integer.parseInt(interestGroupId));
 			List<UserDynamic> userDynamics = this.userDynamticService.getUserDynamicsByInterestGroupId(Integer.parseInt(interestGroupId));
 			request.setAttribute("interestGroup", interestGroup);

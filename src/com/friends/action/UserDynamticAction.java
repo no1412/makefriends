@@ -68,6 +68,9 @@ public class UserDynamticAction extends BaseAction<UserDynamic> implements Servl
 	    if (userDynamticId != null) {
 	        userDynamic = this.userDynamticService.getUserDynamticById(Integer.parseInt(userDynamticId));
         }
+	    //保存浏览数量
+	    userDynamic.setWatchCount(userDynamic.getWatchCount() + 1);
+	    this.userDynamticService.save(userDynamic);
 	    request.setAttribute("userDynamic", userDynamic);
 	    return "seeUserDynamtic";
 	}

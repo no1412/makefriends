@@ -23,7 +23,7 @@
 		<property name="idCard" type="string"></property>
 		<property name="registerTime" type="date"></property>
 		
-		<set name="interestGroups" table="user_interestGroup">
+		<set name="interestGroups" order-by="interestGroup_id desc" table="user_interestGroup" inverse="false" lazy="false">
 			<key column="user_id"></key>
 			<many-to-many class="InterestGroup" column="interestGroup_id"></many-to-many>
 		</set>
