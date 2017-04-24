@@ -24,6 +24,7 @@
 		
 		<action name="userDynamtic_*" method="{1}" class="com.friends.action.UserDynamticAction">
 			<result name="seeUserDynamtic">/view/postHome.jsp</result>
+			<result name="seeMyDynamtic">/view/myDynamtics.jsp</result>
 			<result name="goInterestGroup" type="redirectAction">
 			    <param name="actionName">interestGroup_seeInterestGroup</param>
 			    <param name="interestGroupId">${interestGroupId}</param>
@@ -66,6 +67,14 @@
     		</result>
     	</action>
     	<action name="interestGroupAjax_*" class="com.friends.action.InterestGroupAjaxAction" method="{1}">
+            <result name="success" type="json">
+                <!-- result是action中设置的变量名，也是页面需要返回的数据，该变量必须有setter和getter方法 -->
+                <param name="root">result</param>
+                <!-- callbackParameter是ajax回调函数中设置的变量名，也是页面需要返回的数据-->
+                <param name="callbackParameter">data</param>
+            </result>
+        </action>
+        <action name="userDynamticAjax_*" class="com.friends.action.UserDynamticAjaxAction" method="{1}">
             <result name="success" type="json">
                 <!-- result是action中设置的变量名，也是页面需要返回的数据，该变量必须有setter和getter方法 -->
                 <param name="root">result</param>

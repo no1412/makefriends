@@ -161,5 +161,24 @@ $(window).load(function() {
 		console.log(img);
 	})
 });
-
-
+/**
+ * 删除userdynamtic
+ */
+$(function() {
+	$(".icon-trash").each(function() {
+		$(this).bind('click', deleteUserDynamtic);
+	});
+	function deleteUserDynamtic () {
+		var userDynamticId = $(this).attr("id");
+		var url = "userDynamticAjax_deleteUserDynamtic.action";
+		var this_ = this;
+		$.post(url,{"userDynamticId":userDynamticId},function(msg){
+			if (msg != null) {
+				alert(msg);
+				$(this_).parent().parent().fadeOut(2000, function () {
+					$(this).remove();
+				});
+			}
+		});
+	}
+});

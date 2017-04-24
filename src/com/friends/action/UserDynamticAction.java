@@ -1,6 +1,8 @@
 package com.friends.action;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -73,6 +75,21 @@ public class UserDynamticAction extends BaseAction<UserDynamic> implements Servl
 	    this.userDynamticService.save(userDynamic);
 	    request.setAttribute("userDynamic", userDynamic);
 	    return "seeUserDynamtic";
+	}
+	
+	/**
+	 * @Title: seeMyDynamtic 
+	 * @Description: TODO(查看user的dynamtic) 
+	 * @param @return    设定文件 
+	 * @return String    返回类型 
+	 * @throws
+	 */
+	public String seeMyDynamtic() {
+	    User user = (User) request.getSession().getAttribute(Constant.USER);
+	    List<UserDynamic> userDynamtics = new ArrayList<UserDynamic>();
+	    userDynamtics.addAll(user.getUserDynamics());
+	    request.setAttribute("userDynamtics", userDynamtics);
+	    return "seeMyDynamtic";
 	}
 	
 	@Override

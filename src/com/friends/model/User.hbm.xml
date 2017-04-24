@@ -27,7 +27,7 @@
 			<key column="user_id"></key>
 			<many-to-many class="InterestGroup" column="interestGroup_id"></many-to-many>
 		</set>
-		<set name="userDynamics" table="userDynamics">
+		<set name="userDynamics" order-by="id desc" lazy="false" table="userDynamics">
 			<key column="user_id"></key>
 			<one-to-many class="UserDynamic"/>
 		</set>

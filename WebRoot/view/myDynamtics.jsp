@@ -84,7 +84,7 @@
 											</p>
 										</div>
 										<div class="card-links">
-											<a href="${pageContext.request.contextPath }/view/myDynamtics.jsp" class="my-mooc l">我的帖子<i class="dot-update"></i></a>
+											<a href="${pageContext.request.contextPath }/userDynamtic_seeMyDynamtic.do" class="my-mooc l">我的帖子<i class="dot-update"></i></a>
 											<span class="split l"></span>
 											<a href="${pageContext.request.contextPath }/user_getMyCollections.do" class="my-sns l">个人中心</a>
 										</div>
@@ -211,106 +211,34 @@
             	描述：ajax添加
             -->
 			<div>
-				<div class="mypost_div1">
-					<a href="${pageContext.request.contextPath }/view/postHome.jsp">
-						<div>
-							<span class="mypost_span1">体验零下39℃：画面简直太震撼了画面简直太震撼了画面简直太震撼了画面简直太震撼了</span>
-							<span class="mypost_span2">
-								<i class="icon-angle-right">&nbsp;&nbsp;技术宅</i>
-							</span>
+				<s:iterator id="userDynamtic" value="#request.userDynamtics">
+					<div class="mypost_div1">
+						<a href="${pageContext.request.contextPath }/userDynamtic_seeUserDynamtic.action?userDynamticId=<s:property value="#userDynamtic.id"/>">
+							<div>
+								<span class="mypost_span1"><s:property value="#userDynamtic.title"/></span>
+								<span class="mypost_span2">
+									<i class="icon-angle-right">&nbsp;&nbsp;<s:property value="#userDynamtic.interestGroup.groupName"/></i>
+								</span>
+							</div>
+							<%-- <div class="mypost_div3">
+								<s:property value="#userDynamtic.content"/>
+							</div>
+							<div class="mypost_div5">
+								<div class="mypost_imgs"><img src="${pageContext.request.contextPath }/img/200.jpg" /></div>
+								<div class="mypost_imgs"><img src="${pageContext.request.contextPath }/img/201.jpg" /></div>
+								<div class="mypost_imgs"><img src="${pageContext.request.contextPath }/img/202.jpg" /></div>
+								<div class="mypost_imgs"><img src="${pageContext.request.contextPath }/img/203.jpg" /></div>
+							</div> --%>
+						</a>
+						<div class="mypost_div4">
+							<span class="mypost_span3">2015-10-25 21:08:13</span>
+							<span class="glyphicon glyphicon-eye-open" title="浏览量"><s:property value="#userDynamtic.watchCount"/></span>&nbsp;&nbsp;
+							<span class="glyphicon glyphicon-comment" title="回复数量"><s:property value="#userDynamtic.comments.size()"/></span>&nbsp;&nbsp;
+							<a id='<s:property value="#userDynamtic.id" />' class="icon-trash icon-large" title="删除"></a>
 						</div>
-						<div class="mypost_div3">
-							这两日，关于“六小龄童上央视春晚节目被毙”成了热议话题，“大师兄”一下子跳到网络热搜的榜首，后来网友们才发现“猴哥”压根就没有受到邀请 ，为此大伙愤愤不平：“蟠桃会不请猴哥也就算了，那是天上的事我们管不了，人间为啥也要把猴哥拒之门外？”有网友调侃道“看来春晚导演组的能 耐比如来佛大，当年猴哥只是被五指山压了五百年，而春晚的导演组却要把猴哥压制永生永世，因为人们是在怀疑12年后已经饕餮之年的猴哥还上得了春晚吗？”
-						</div>
-						<div class="mypost_div5">
-							<div class="mypost_imgs"><img src="${pageContext.request.contextPath }/img/200.jpg" /></div>
-							<div class="mypost_imgs"><img src="${pageContext.request.contextPath }/img/201.jpg" /></div>
-							<div class="mypost_imgs"><img src="${pageContext.request.contextPath }/img/202.jpg" /></div>
-							<div class="mypost_imgs"><img src="${pageContext.request.contextPath }/img/203.jpg" /></div>
-						</div>
-					</a>
-					<div class="mypost_div4">
-						<span class="mypost_span3">2015-10-25 21:08:13</span>
-						<span class="glyphicon glyphicon-eye-open" title="浏览量">45</span>&nbsp;&nbsp;
-						<span class="glyphicon glyphicon-comment" title="帖子数量">89</span>&nbsp;&nbsp;
-						<a class="icon-trash icon-large" title="删除"></a>
 					</div>
-				</div>
-				<hr class="mymessage_hr1">
-				<div class="mypost_div1">
-					<a href="${pageContext.request.contextPath }/view/postHome.jsp">
-						<div>
-							<span class="mypost_span1">【Tiny Times】小时代续写</span>
-							<span class="mypost_span2">
-								<i class="icon-angle-right">&nbsp;&nbsp;小说吧</i>
-							</span>
-						</div>
-						<div class="mypost_div3">
-							 我们几个人订好房间后计划了一下，决定先在海南玩儿两天，然后去巴厘岛，最后去英国，最之后就回上海。 第二天，我们上午准备了一下，下午来到海边，放眼望去，一片都是穿比基尼的美女，我们也换上了事先准备好的比基尼，现在我们也成为她们其中的一员。我们在海边嬉闹着，仿佛这一刻我们都是孩子，我们互相泼着水，溅起来的水花贱到了我们每个人的脸上，我们一直玩儿到很晚，直到夕阳落山………
-						</div>
-						<div class="mypost_div5">
-							<div class="mypost_imgs"><img src="${pageContext.request.contextPath }/img/204.jpg" /></div>
-							<div class="mypost_imgs"><img src="${pageContext.request.contextPath }/img/205.jpg" /></div>
-						</div>
-					</a>
-					<div class="mypost_div4">
-						<span class="mypost_span3">2016-12-25 08:08:43</span>
-						<span class="glyphicon glyphicon-eye-open" title="浏览量">4222</span>&nbsp;&nbsp;
-						<span class="glyphicon glyphicon-comment" title="帖子数量">11</span>&nbsp;&nbsp;
-						<a class="icon-trash icon-large" title="删除"></a>
-					</div>
-				</div>
-				<hr class="mymessage_hr1">
-				<div class="mypost_div1">
-					<a href="${pageContext.request.contextPath }/view/postHome.jsp">
-						<div>
-							<span class="mypost_span1">《蜀山战纪》虐恋之吻</span>
-							<span class="mypost_span2">
-								<i class="icon-angle-right">&nbsp;&nbsp;电视剧</i>
-							</span>
-						</div>
-						<div class="mypost_div3">
-							不多说，让我们看看以下图片吧？点暂是鼓励，赞赏是动力。发言是你们对“银杏夫妇”的爱意。友情提示【100赞一更哦！】
-						</div>
-						<div class="mypost_div5">
-							<div class="mypost_imgs"><img src="${pageContext.request.contextPath }/img/206.jpg" /></div>
-							<div class="mypost_imgs"><img src="${pageContext.request.contextPath }/img/207.jpg" /></div>
-							<div class="mypost_imgs"><img src="${pageContext.request.contextPath }/img/208.jpg" /></div>
-						</div>
-					</a>
-					<div class="mypost_div4">
-						<span class="mypost_span3">2005-10-04 01:58:13</span>
-						<span class="glyphicon glyphicon-eye-open" title="浏览量">25</span>&nbsp;&nbsp;
-						<span class="glyphicon glyphicon-comment" title="帖子数量">759</span>&nbsp;&nbsp;
-						<a class="icon-trash icon-large" title="删除"></a>
-					</div>
-				</div>
-				<hr class="mymessage_hr1">
-				<div class="mypost_div1">
-					<a href="${pageContext.request.contextPath }/view/postHome.jsp">
-						<div>
-							<span class="mypost_span1">如我战死沙场，愿亲人能理解，伤我最深的人过得比我好</span>
-							<span class="mypost_span2">
-								<i class="icon-angle-right">&nbsp;&nbsp;军人</i>
-							</span>
-						</div>
-						<div class="mypost_div3">
-							我们不是万能的，穿着军装我们是忠诚卫士，是不畏牺牲，不畏艰难困苦，脱下军装还是一个普普通通的人，不是神，愿那些只喜欢军装的女人不要再来打扰，不要再来伤害我，
-						</div>
-						<div class="mypost_div5">
-							<div class="mypost_imgs"><img src="${pageContext.request.contextPath }/img/210.jpg" /></div>
-							<div class="mypost_imgs"><img src="${pageContext.request.contextPath }/img/209.jpg" /></div>
-							<div class="mypost_imgs"><img src="${pageContext.request.contextPath }/img/203.jpg" /></div>
-						</div>
-					</a>
-					<div class="mypost_div4">
-						<span class="mypost_span3">2011-11-25 11:28:14</span>
-						<span class="glyphicon glyphicon-eye-open" title="浏览量">442</span>&nbsp;&nbsp;
-						<span class="glyphicon glyphicon-comment" title="帖子数量">879</span>&nbsp;&nbsp;
-						<a class="icon-trash icon-large" title="删除"></a>
-					</div>
-				</div>
-				<hr class="mymessage_hr1">
+					<hr class="mymessage_hr1">
+				</s:iterator>
 			</div>
 		</div>
 	</div>

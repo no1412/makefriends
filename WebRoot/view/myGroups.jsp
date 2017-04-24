@@ -84,7 +84,7 @@
 											</p>
 										</div>
 										<div class="card-links">
-											<a href="${pageContext.request.contextPath }/view/myDynamtics.jsp" class="my-mooc l">我的帖子<i class="dot-update"></i></a>
+											<a href="${pageContext.request.contextPath }/userDynamtic_seeMyDynamtic.do" class="my-mooc l">我的帖子<i class="dot-update"></i></a>
 											<span class="split l"></span>
 											<a href="${pageContext.request.contextPath }/user_getMyCollections.do" class="my-sns l">个人中心</a>
 										</div>
@@ -174,7 +174,7 @@
 				</div>
 				<div class="bottom_div">
 					<p>
-						<a href="${pageContext.request.contextPath }/view/myDynamtics.jsp"><span class="icon-tags">&nbsp;我的帖子</span></a>
+						<a href="${pageContext.request.contextPath }/userDynamtic_seeMyDynamtic.do"><span class="icon-tags">&nbsp;我的帖子</span></a>
 					</p>
 				</div>
 				<%-- <div class="bottom_div">

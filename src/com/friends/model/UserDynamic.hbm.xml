@@ -23,7 +23,7 @@
 			<key column="userDynamic_id"></key>
 			<many-to-many class="UserDynamicPic" column="userDynamicPic_id"></many-to-many>
 		</set>
-		<set name="comments" order-by="replyTime desc" table="comment">
+		<set name="comments" order-by="replyTime desc" lazy="false" table="comment">
             <key column="userDynamic_id"></key>
             <one-to-many class="Comment"></one-to-many>
         </set>
