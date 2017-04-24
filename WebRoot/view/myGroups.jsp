@@ -156,7 +156,7 @@
 				<div style="margin-top: 0;margin-bottom: 10px;">
 					<a href="#" style="margin-left: 10px;margin-right: 40px;">经验:<b id="js-user-credit"><s:property value="#session.user.experience"/></b></a>
 					<a href="${pageContext.request.contextPath }/user_getMyCollections.do" title="我的收藏"><span class="icon-heart icon-large"></span></a>
-					<a href="${pageContext.request.contextPath }/view/myMessages.jsp" title="我的消息"><span class="icon-envelope-alt icon-large"></span></a>
+					<%-- <a href="${pageContext.request.contextPath }/view/myMessages.jsp" title="我的消息"><span class="icon-envelope-alt icon-large"></span></a> --%>
 					<a href="${pageContext.request.contextPath }/view/accountSetting.jsp" title="账号设置"><span class="icon-cog icon-large"></span></a>
 				</div>
 			</div>
