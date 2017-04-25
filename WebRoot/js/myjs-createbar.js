@@ -27,28 +27,28 @@ $(document).ready(function() {
 				validating: 'glyphicon glyphicon-refresh'
 			},
 			fields: {
-				senderName: {
+				interestGroupName: {
 					validators: {
 						notEmpty: {
 							message: '名字不能为空'
 						},
 						stringLength: {
 							min: 1,
-							max: 5,
-							message: '长度不能超过5个字符'
+							max: 15,
+							message: '长度不能超过15个字符'
 						},
 					}
 				},
-				firstFile: {
+				interestGroupBg: {
 					validators: {
 						file: {
-							extension: 'jpg',
-							type: 'application/jpg',
-							message: '请选择一张jpg照片.'
+							extension: 'jpg,jpeg,gif,png',
+							type: 'image/jpeg,image/png,image/gif',
+							message: '请选择一张图片(类型jpg,jpeg,gif,png).'
 						}
 					}
 				},
-				miaoshu: {
+				interestGroupDesc: {
 					validators: {
 						stringLength: {
 							min: 0,
@@ -57,14 +57,14 @@ $(document).ready(function() {
 						},
 					}
 				},
-				xingqu: {
+				interestId: {
 					validators: {
 						notEmpty: {
 							message: '必须选择一个兴趣类型'
 						}
 					}
 				},
-				liyou: {
+				applyReason: {
 					validators: {
 						stringLength: {
 							min: 0,
@@ -73,7 +73,7 @@ $(document).ready(function() {
 						},
 					}
 				},
-				Name: {
+				userRealName: {
 					validators: {
 						notEmpty: {
 							message: '名字不能为空'
@@ -81,7 +81,7 @@ $(document).ready(function() {
 
 					}
 				},
-				birthday: {
+				userBirthday: {
 					validators: {
 						date: {
 							format: 'YYYY/MM/DD',
@@ -89,7 +89,7 @@ $(document).ready(function() {
 						}
 					}
 				},
-				rencard: {
+				userIdCard: {
 					validators: {
 						notEmpty: {
 							message: '身份证号不能为空'
@@ -103,7 +103,7 @@ $(document).ready(function() {
 						}
 					}
 				},
-				email: {
+				userEmail: {
 					validators: {
 						notEmpty: {
 							message: '邮件不能为空'
@@ -113,7 +113,7 @@ $(document).ready(function() {
 						}
 					}
 				},
-				phoneNumber: {
+				userPhoneNumber: {
 					validators: {
 						notEmpty: {
 							message: '电话号码不能为空'

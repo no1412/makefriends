@@ -19,7 +19,15 @@
 		</action>
 
 		<action name="interestGroup_*" method="{1}" class="com.friends.action.InterestGroupAction">
+		    <!-- 重置fileUpload拦截器 -->
+		    <interceptor-ref name="fileUpload">
+		          <param name="maximumSize">10485760</param>
+		          <param name="allowedExtensions">jpg,jpeg,gif,png</param>
+		    </interceptor-ref>
+		    <interceptor-ref name="defaultStack"></interceptor-ref>
 			<result name="success">/view/interestGroup.jsp</result>
+			<result name="saveCreatedInterestGroup" type="redirect">/view/interestGroup.jsp</result>
+			<result name="createInterestGroup">/view/createInterestGroup.jsp</result>
 		</action>
 		
 		<action name="userDynamtic_*" method="{1}" class="com.friends.action.UserDynamticAction">

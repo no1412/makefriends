@@ -18,9 +18,10 @@ public class User {
 	private Date birth;//出生日期
 	private Date registerTime;//注册时间
 	private String idCard;//身份证号
-	private String email;
+	private String email;//邮箱
+	private String userRealName;
 	
-	
+	private Set<InterestGroup> createdInterestGroups;
 	private Set<InterestGroup> interestGroups;
 	private Set<UserDynamic> userDynamics;
  	
@@ -120,4 +121,16 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+    public Set<InterestGroup> getCreatedInterestGroups() {
+        return createdInterestGroups;
+    }
+    public void setCreatedInterestGroups(Set<InterestGroup> createdInterestGroups) {
+        this.createdInterestGroups = createdInterestGroups;
+    }
+    public String getUserRealName() {
+        return userRealName;
+    }
+    public void setUserRealName(String userRealName) {
+        this.userRealName = userRealName;
+    }
 }

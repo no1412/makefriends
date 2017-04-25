@@ -54,7 +54,7 @@
 					<li class="active"><a href="${pageContext.request.contextPath }/view/index.jsp">首页</a></li>
 					<li><a href="${pageContext.request.contextPath }/interest_getAllInfos.action">社区</a></li>
 					<li class="active"><a href="${pageContext.request.contextPath }/view/personaCenter.jsp">个人中心</a></li>
-					<li><a href="${pageContext.request.contextPath }/view/createInterestGroup.jsp">创建兴趣小组</a></li>
+					<li><a href="${pageContext.request.contextPath }/view/interestGroup_createInterestGroup.action">创建兴趣小组</a></li>
 					<li><a href="#" data-toggle="modal" data-target="#about-modal">关于</a></li>
 				</ul>
 				<div class="navbar-form navbar-right">
@@ -205,66 +205,23 @@
 				<h3 style="color: #000000;margin-top: 0;">我的吧台</h3>
 			</div>
 			<hr class="middle_right_hr">
-			<div class="right_div rounded wow fadeInUp">
-				<h3 class="h3 right_h3">兼职平台~~~</h3>
-				<hr class="right_hr" />
-				<div class="right_imgdiv">
-					<a href="${pageContext.request.contextPath }/view/interestGroup.jsp"><img class="right_img" src="${pageContext.request.contextPath }/img/3.jpg" /></a>
+			<s:iterator id="" value="" >
+				<div class="right_div rounded wow fadeInUp">
+					<h3 class="h3 right_h3">兼职平台~~~</h3>
+					<hr class="right_hr" />
+					<div class="right_imgdiv">
+						<a href="${pageContext.request.contextPath }/view/interestGroup.jsp"><img class="right_img" src="${pageContext.request.contextPath }/img/3.jpg" /></a>
+					</div>
+					<p class="right_p">
+						曾经有人问我，失去的东西回来还要吗？我说，我曾经丢了一粒扣子，等到找回那粒扣子时，我已经换了衣服。 人与人之间没有谁离不开谁， 只有谁不珍惜谁。 无论是故友还是红颜，一个转身，二个世界。 一生之中有一个爱你，疼你，牵挂你的人，这就是幸福。 人生皆回忆，且行 且珍惜！送给2016的第一天接吻的情侣，，，且行珍惜！？！
+					</p>
+					<div class="right_indiv">
+						<span class="glyphicon glyphicon-user right_span1" title="用户数量">458</span>
+						<span class="glyphicon glyphicon-edit right_span1" title="帖子数量">4332345</span>
+						<span  title="收藏" class="icon-heart icon-large right_click right_span1 right_span3"></span>
+					</div>
 				</div>
-				<p class="right_p">
-					曾经有人问我，失去的东西回来还要吗？我说，我曾经丢了一粒扣子，等到找回那粒扣子时，我已经换了衣服。 人与人之间没有谁离不开谁， 只有谁不珍惜谁。 无论是故友还是红颜，一个转身，二个世界。 一生之中有一个爱你，疼你，牵挂你的人，这就是幸福。 人生皆回忆，且行 且珍惜！送给2016的第一天接吻的情侣，，，且行珍惜！？！
-				</p>
-				<div class="right_indiv">
-					<span class="glyphicon glyphicon-user right_span1" title="用户数量">458</span>
-					<span class="glyphicon glyphicon-edit right_span1" title="帖子数量">4332345</span>
-					<span  title="收藏" class="icon-heart icon-large right_click right_span1 right_span3"></span>
-				</div>
-			</div>
-			<div class="right_div rounded wow fadeInUp">
-				<h3 class="h3 right_h3">大理旅游</h3>
-				<hr class="right_hr" />
-				<div class="right_imgdiv">
-					<a href="${pageContext.request.contextPath }/view/interestGroup.jsp"><img class="right_img" src="${pageContext.request.contextPath }/img/4.jpg" /></a>
-				</div>
-				<p class="right_p">
-					当兵一年多了，很想家，也很喜欢部队。家里的亲人还好吗？兄弟还好吗。张雅倩你还好吗？我很想回家过年。但是不能。因为我是兵。
-				</p>
-				<div class="right_indiv">
-					<span class="glyphicon glyphicon-user right_span1" title="用户数量">55745</span>
-					<span class="glyphicon glyphicon-edit right_span1" title="帖子数量">72245</span>
-					<span  title="收藏" class="icon-heart icon-large right_click right_span1 right_span2"></span>
-				</div>
-			</div>
-			<div class="right_div rounded wow fadeInUp">
-				<h3 class="h3 right_h3">多面体</h3>
-				<hr class="right_hr" />
-				<div class="right_imgdiv">
-					<a href="${pageContext.request.contextPath }/view/interestGroup.jsp"><img class="right_img" src="${pageContext.request.contextPath }/img/2.jpg" /></a>
-				</div>
-				<p class="right_p">
-					最珍重的事应该最沉默。不肯说给人听，不肯拿给人看，放在心底，生怕语言扭曲它，空气氧 化它。日久月深成了一个人的心血，我们才成为了人群中彼此不同的人。
-				</p>
-				<div class="right_indiv">
-					<span class="glyphicon glyphicon-user right_span1" title="用户数量">4532</span>
-					<span class="glyphicon glyphicon-edit right_span1" title="帖子数量">896345245</span>
-					<span  title="收藏" class="icon-heart icon-large right_click right_span1 right_span2"></span>
-				</div>
-			</div>
-			<div class="right_div rounded wow fadeInUp">
-				<h3 class="h3 right_h3">QQ飞车游戏</h3>
-				<hr class="right_hr" />
-				<div class="right_imgdiv">
-					<a href="${pageContext.request.contextPath }/view/interestGroup.jsp"><img class="right_img" src="${pageContext.request.contextPath }/img/5.jpg" /></a>
-				</div>
-				<p class="right_p">
-					"男人不要觉得有很多备胎多光荣，因为只有破车才需要备胎。女人也不要觉得有很多追求者多骄傲，因为只有廉价货才被哄抢！"所以做一个限量版的自己 ！
-				</p>
-				<div class="right_indiv">
-					<span class="glyphicon glyphicon-user right_span1" title="用户数量">745</span>
-					<span class="glyphicon glyphicon-edit right_span1" title="帖子数量">8978245</span>
-					<span  title="收藏" class="icon-heart icon-large right_click right_span1 right_span2"></span>
-				</div>
-			</div>
+			</s:iterator>
 		</div>
 	</div>
 

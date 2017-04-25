@@ -1,26 +1,22 @@
 package com.friends.model;
 
+import java.util.Date;
 import java.util.Set;
 
 public class InterestGroup {
 	private Integer id;
-	private int userDynamticCount;
 	private int searchCount;
 	private String groupName;
 	private String groupBg;
 	private String groupDesc;
 	private String applyReason;
+	private Date createdTime;
 	
 	private Set<User> users;
 	private Set<UserDynamic> userDynamics;
 	private Interest interest;
+	private User createdUser;
 	
-	public Set<User> getUsers() {
-		return users;
-	}
-	public void setUsers(Set<User> users) {
-		this.users = users;
-	}
 	public Integer getId() {
 		return id;
 	} 
@@ -63,17 +59,29 @@ public class InterestGroup {
 	public void setUserDynamics(Set<UserDynamic> userDynamics) {
 		this.userDynamics = userDynamics;
 	}
-	public int getUserDynamticCount() {
-		return userDynamticCount;
-	}
-	public void setUserDynamticCount(int userDynamticCount) {
-		this.userDynamticCount = userDynamticCount;
-	}
 	public int getSearchCount() {
 		return searchCount;
 	}
 	public void setSearchCount(int searchCount) {
 		this.searchCount = searchCount;
 	}
+	public Set<User> getUsers() {
+        return users;
+    }
+    public void setUsers(Set<User> users) {
+        this.users = users;
+    }
+    public User getCreatedUser() {
+        return createdUser;
+    }
+    public void setCreatedUser(User createdUser) {
+        this.createdUser = createdUser;
+    }
+    public Date getCreatedTime() {
+        return createdTime;
+    }
+    public void setCreatedTime(Date createdTime) {
+        this.createdTime = createdTime;
+    }
 	
 }

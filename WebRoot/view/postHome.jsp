@@ -67,7 +67,7 @@
 						<li class="active"><a href="${pageContext.request.contextPath }/interest_getAllInfos.action">社区</a></li>
 						<s:if test="#session.user!=null">
 							<li><a href="${pageContext.request.contextPath }/user_getMyCollections.do">个人中心</a></li>
-							<li><a href="${pageContext.request.contextPath }/view/createInterestGroup.jsp">创建兴趣小组</a></li>
+							<li><a href="${pageContext.request.contextPath }/view/interestGroup_createInterestGroup.action">创建兴趣小组</a></li>
 						</s:if>
 						<li><a href="#" data-toggle="modal" data-target="#about-modal">关于</a></li>
 				</ul>

@@ -55,7 +55,7 @@
 					<li class="active"><a href="${pageContext.request.contextPath }/view/index.jsp">首页</a></li>
 					<li><a href="${pageContext.request.contextPath }/interest_getAllInfos.action">社区</a></li>
 					<li class="active"><a href="${pageContext.request.contextPath }/view/personaCenter.jsp">个人中心</a></li>
-					<li><a href="${pageContext.request.contextPath }/view/createInterestGroup.jsp">创建兴趣小组</a></li>
+					<li><a href="${pageContext.request.contextPath }/view/interestGroup_createInterestGroup.action">创建兴趣小组</a></li>
 					<li><a href="#" data-toggle="modal" data-target="#about-modal">关于</a></li>
 				</ul>
 				<div class="navbar-form navbar-right">

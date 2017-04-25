@@ -40,7 +40,7 @@
 						<li><a href="${pageContext.request.contextPath }/interest_getAllInfos.action">社区</a></li>
 						<s:if test="#session.user!=null">
 							<li><a href="${pageContext.request.contextPath }/user_getMyCollections.do">个人中心</a></li>
-							<li class="active"><a href="${pageContext.request.contextPath }/view/createInterestGroup.jsp">创建兴趣小组</a></li>
+							<li class="active"><a href="${pageContext.request.contextPath }/view/interestGroup_createInterestGroup.action">创建兴趣小组</a></li>
 						</s:if>
 						<li><a href="#" data-toggle="modal" data-target="#about-modal">关于</a></li>
 					</ul>
@@ -139,47 +139,42 @@
 							<li><a href="#info-tab" id="create-a1" data-toggle="tab">个人信息</a></li>
 							<li><a href="#sumbit-tab" id="create-a2" data-toggle="tab">提交审核</a></li>
 						</ul>
-						<form id="bataiForm" method="post" class="form-horizontal" action="target.php" style="margin-top: 20px;">
+						<form id="bataiForm" method="post" class="form-horizontal" action="${pageContext.request.contextPath }/interestGroup_saveCreatedInterestGroup.action" enctype="multipart/form-data" style="margin-top: 20px;">
 							<div class="tab-content">
 								<div class="tab-pane active" id="triba-tab">
 									<div class="form-group" style="margin-bottom: 20px;">
 										<label class="col-lg-2 control-label">吧台名称</label>
 										<div class="col-lg-6">
-											<input class="form-control" type="text" name="senderName" />
+											<input class="form-control" type="text" name="interestGroupName" />
 										</div>
 									</div>
 									<div class="form-group" style="margin-bottom: 20px;">
 										<label class="col-lg-2 control-label">吧台背景</label>
 										<div class="col-lg-6">
-											<input type="file" class="form-control" id="firstFile">
+											<input type="file" name="interestGroupBg" class="form-control" id="firstFile">
 										</div>
 									</div>
 									<div class="form-group" style="margin-bottom: 20px;">
 										<label class="col-lg-2 control-label">兴趣类型</label>
 										<div class="col-lg-6">
-											<select class="form-control" name="xingqu">
+											<select class="form-control" name="interestId">
 												<option value="">-- 请选择兴趣类型 --</option>
-												<option value="yx">游戏</option>
-												<option value="mv">美女</option>
-												<option value="dq">地区</option>
-												<option value="ty">体育</option>
-												<option value="dsj">电视剧</option>
-												<option value="wdy">微电影</option>
-												<option value="jj">竞技</option>
+												<s:iterator id="interest" value="#request.interests">
+												    <option value="<s:property value="#interest.id"/>"><s:property value="#interest.interestName"/></option>
+												</s:iterator>
 											</select>
 										</div>
 									</div>
 									<div class="form-group" style="margin-bottom: 20px;">
 										<label class="col-lg-2 control-label">吧台简介</label>
 										<div class="col-lg-6">
-
-											<textarea name="miaoshu" rows="4" style="resize: none;" class="form-control"></textarea>
+											<textarea name="interestGroupDesc" rows="4" style="resize: none;" class="form-control"></textarea>
 										</div>
 									</div>
 									<div class="form-group" style="margin-bottom: 20px;">
 										<label class="col-lg-2 control-label">申请理由</label>
 										<div class="col-lg-6">
-											<textarea name="liyou" rows="3" style="resize: none;" class="form-control"></textarea>
+											<textarea name="applyReason" rows="3" style="resize: none;" class="form-control"></textarea>
 										</div>
 									</div>
 									<div class="form-group" style="margin-top: 50px;margin-left: 20px;">
@@ -192,31 +187,31 @@
 									<div class="form-group" style="margin-bottom: 20px;">
 										<label class="col-lg-2 control-label">真实姓名</label>
 										<div class="col-lg-6">
-											<input class="form-control" type="text" name="Name" placeholder="请填写真实姓名" />
+											<input class="form-control" type="text" name="userRealName" placeholder="请填写真实姓名" />
 										</div>
 									</div>
 									<div class="form-group" style="margin-bottom: 20px;">
 										<label class="col-lg-2 control-label">生日</label>
 										<div class="col-lg-6">
-											<input type="date" class="form-control" name="birthday" />
+											<input type="date" class="form-control" name="userBirthday" />
 										</div>
 									</div>
 									<div class="form-group" style="margin-bottom: 20px;">
 										<label class="col-sm-2 control-label">身份证号码</label>
 										<div class="col-sm-6">
-											<input type="text" class="form-control" name="rencard" />
+											<input type="text" class="form-control" name="userIdCard" />
 										</div>
 									</div>
 									<div class="form-group" style="margin-bottom: 20px;">
 										<label class="col-lg-2 control-label">个人邮箱</label>
 										<div class="col-lg-6">
-											<input type="text" class="form-control" name="email" />
+											<input type="text" class="form-control" name="userEmail" />
 										</div>
 									</div>
 									<div class="form-group" style="margin-bottom: 20px;">
 										<label class="col-lg-2 control-label">手机号码</label>
 										<div class="col-lg-6">
-											<input type="text" class="form-control" name="phoneNumber" />
+											<input type="text" class="form-control" name="userPhoneNumber" />
 										</div>
 									</div>
 									<div class="form-group" style="margin-top: 50px;">

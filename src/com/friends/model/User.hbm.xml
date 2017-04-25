@@ -22,6 +22,7 @@
 		<property name="birth" type="date"></property>
 		<property name="idCard" type="string"></property>
 		<property name="registerTime" type="date"></property>
+		<property name="userRealName" type="string"></property>
 		
 		<set name="interestGroups" order-by="interestGroup_id desc" table="user_interestGroup" inverse="false" lazy="false">
 			<key column="user_id"></key>
@@ -31,6 +32,10 @@
 			<key column="user_id"></key>
 			<one-to-many class="UserDynamic"/>
 		</set>
+		<set name="createdInterestGroups" order-by="id desc" lazy="false" table="interestgroup">
+            <key column="created_user_id"></key>
+            <one-to-many class="InterestGroup"/>
+        </set>
 	</class>
 
 </hibernate-mapping>
