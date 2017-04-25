@@ -172,7 +172,7 @@
 				</div>
 				<div class="bottom_div">
 					<p>
-						<a href="${pageContext.request.contextPath }/view/myGroups.jsp"><span class="icon-bookmark">&nbsp;&nbsp;我的吧台</span></a>
+						<a href="${pageContext.request.contextPath }/user_seeMyGroups.do"><span class="icon-bookmark">&nbsp;&nbsp;我的吧台</span></a>
 					</p>
 				</div>
 				<div class="bottom_div">
@@ -221,7 +221,7 @@
 					<div class="right_indiv">
 						<span class="glyphicon glyphicon-user right_span1" title="用户数量"><s:property value="#interestGroup.users.size()"/></span>
                         <span class="glyphicon glyphicon-edit right_span1" title="帖子数量"><s:property value="#interestGroup.userDynamics.size()"/></span>
-						<span title="收藏" id="<s:property value="#interestGroup.id"/>" class="icon-heart icon-large right_click right_span1 right_span2"></span>
+						<span title="收藏" id="<s:property value="#interestGroup.id"/>" class="icon-heart icon-large right_click right_span1 right_span2"  name="myColloectionId"></span>
 					</div>
 				</div>
 			</s:iterator>

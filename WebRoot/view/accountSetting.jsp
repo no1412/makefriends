@@ -173,7 +173,7 @@
 				</div>
 				<div class="bottom_div">
 					<p>
-						<a href="${pageContext.request.contextPath }/view/myGroups.jsp"><span class="icon-bookmark">&nbsp;&nbsp;我的吧台</span></a>
+						<a href="${pageContext.request.contextPath }/user_seeMyGroups.do"><span class="icon-bookmark">&nbsp;&nbsp;我的吧台</span></a>
 					</p>
 				</div>
 				<div class="bottom_div">

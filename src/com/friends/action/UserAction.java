@@ -75,6 +75,25 @@ public class UserAction extends BaseAction<User> implements ServletRequestAware{
 	    request.setAttribute("list_interestGroup", list_interestGroup);
 		return "getMyCollections";
 	}
+	/**
+	 * @Title: seeMyGroups 
+	 * @Description: TODO(查看用户创建的小组) 
+	 * @param @return    设定文件 
+	 * @return String    返回类型 
+	 * @throws
+	 */
+	public String seeMyGroups() {
+	    User user = (User) request.getSession().getAttribute(Constant.USER);
+	    if (user != null) {
+            List<Integer> userLikedInterestGroupIds = new ArrayList<Integer>();
+            for (InterestGroup interestGroup : user.getInterestGroups()) {
+                userLikedInterestGroupIds.add(interestGroup.getId());
+            }
+            request.setAttribute("userLikedInterestGroupIds", userLikedInterestGroupIds);
+        }
+	    request.setAttribute("interestGroups", user.getCreatedInterestGroups());
+	    return "seeMyGroups";
+	}
 	
 	@Override
 	public void setServletRequest(HttpServletRequest hsq) {

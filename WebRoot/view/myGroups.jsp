@@ -17,6 +17,7 @@
 	<!--<加载bootstrap.min.js之前先加载jquery.min.js-->
 	<script type="text/javascript" src="${pageContext.request.contextPath }/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath }/js/wow.min.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath }/js/cropbox.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath }/js/myjs-person.js"></script>
 	
 	<script type="text/javascript" src="${pageContext.request.contextPath }/js/myAjax.js"></script>
@@ -24,6 +25,9 @@
 	<script>
 		new WOW().init();
 		getTop();
+        //初试化js的当前user对象
+        var user = "${session.user}";
+        var userId = "${session.user.id}";
 	</script>
 	<!--[if lt IE 9]>
 	    <script src="http://static.sfcdn.org/dep/js/html5shiv.min.js "></script>
@@ -168,7 +172,7 @@
 				</div>
 				<div class="bottom_div" style="background-color: #337AB7;">
 					<p style="color: white;">
-						<a href="#" style="color: white;"><span class="icon-bookmark">&nbsp;&nbsp;我的吧台</span></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="${pageContext.request.contextPath }/user_seeMyGroups.do" style="color: white;"><span class="icon-bookmark">&nbsp;&nbsp;我的吧台</span></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<span class="icon-chevron-right"></span>
 					</p>
 				</div>
@@ -205,20 +209,25 @@
 				<h3 style="color: #000000;margin-top: 0;">我的吧台</h3>
 			</div>
 			<hr class="middle_right_hr">
-			<s:iterator id="" value="" >
+			<s:iterator id="interestGroup" value="#request.interestGroups" >
 				<div class="right_div rounded wow fadeInUp">
-					<h3 class="h3 right_h3">兼职平台~~~</h3>
+					<h3 class="h3 right_h3"><s:property value="#interestGroup.groupName" /></h3>
 					<hr class="right_hr" />
 					<div class="right_imgdiv">
-						<a href="${pageContext.request.contextPath }/view/interestGroup.jsp"><img class="right_img" src="${pageContext.request.contextPath }/img/3.jpg" /></a>
+						<a href="${pageContext.request.contextPath }/interestGroup_seeInterestGroup.action?interestGroupId=<s:property value="#interestGroup.id" />"><img class="right_img" src="${pageContext.request.contextPath }/<s:property value="#interestGroup.groupBg" />" /></a>
 					</div>
 					<p class="right_p">
-						曾经有人问我，失去的东西回来还要吗？我说，我曾经丢了一粒扣子，等到找回那粒扣子时，我已经换了衣服。 人与人之间没有谁离不开谁， 只有谁不珍惜谁。 无论是故友还是红颜，一个转身，二个世界。 一生之中有一个爱你，疼你，牵挂你的人，这就是幸福。 人生皆回忆，且行 且珍惜！送给2016的第一天接吻的情侣，，，且行珍惜！？！
+						<s:property value="#interestGroup.groupDesc" />
 					</p>
 					<div class="right_indiv">
-						<span class="glyphicon glyphicon-user right_span1" title="用户数量">458</span>
-						<span class="glyphicon glyphicon-edit right_span1" title="帖子数量">4332345</span>
-						<span  title="收藏" class="icon-heart icon-large right_click right_span1 right_span3"></span>
+						<span class="glyphicon glyphicon-user right_span1" title="用户数量"><s:property value="#interestGroup.users.size()" /></span>
+						<span class="glyphicon glyphicon-edit right_span1" title="帖子数量"><s:property value="#interestGroup.userDynamics.size()" /></span>
+						<s:if test="#request.userLikedInterestGroupIds.contains(#interestGroup.id)">
+							<span id="<s:property value="#interestGroup.id" />" title="收藏" class="icon-heart icon-large right_span1 right_click right_span2" name="myInterestgroupId"></span>
+						</s:if>
+						<s:else>
+						    <span id="<s:property value="#interestGroup.id" />" title="收藏" class="icon-heart icon-large right_span1 right_click right_span3" name="myInterestgroupId"></span>
+						</s:else>
 					</div>
 				</div>
 			</s:iterator>

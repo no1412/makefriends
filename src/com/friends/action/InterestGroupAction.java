@@ -153,7 +153,7 @@ public class InterestGroupAction extends BaseAction<InterestGroup> implements Se
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-	    
+	    request.getSession().setAttribute(Constant.USER, this.userService.getById(user.getId()));
 	    return "saveCreatedInterestGroup";
 	}
 	public void setServletRequest(HttpServletRequest hsq) {

@@ -8,7 +8,7 @@ $(function() {
 	});
 })
 
-/*点击收藏颜色转换*/
+/*我的收藏点击收藏颜色转换*/
 $(function(){
 	var changeSys = function(){
   		if($(this).hasClass('right_span2')){
@@ -34,12 +34,37 @@ $(function(){
 			alert(msg);
 		});
 	}
-	$(".right_click").each(
+	$("span[name='myColloectionId']").each(
 		function() {
 			$(this).bind('click', changeSys);
 	});
 });
-
+/* 吧台点击收藏颜色转换 */
+$(function() {
+	function changeLikedInterestGroup() {
+		var interestGroupId = $(this).attr("id");
+		if ($(this).hasClass('right_span2')) {
+			var deleted = true;
+			$(this).removeClass('right_span2');
+			$(this).addClass("right_span3");
+			sendCollectInfors(userId, interestGroupId, deleted);
+		} else {
+			var deleted = false;
+			$(this).removeClass('right_span3');
+			$(this).addClass("right_span2");
+			sendCollectInfors(userId, interestGroupId, deleted);
+		}
+	};
+	function sendCollectInfors(userId, interestGroupId, deleted) {
+		var url = "interestGroupAjax_addLikedInterestGroup.action";
+		$.post(url,{"userId":userId, "interestGroupId":interestGroupId, "deleted":deleted},function(msg){
+			alert(msg);
+		});
+	}
+	$("span[name='myInterestgroupId']").each(function() {
+		$(this).bind('click', changeLikedInterestGroup);
+	});
+});
 
 /*
  * 右下角回到顶部
