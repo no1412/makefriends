@@ -94,5 +94,104 @@ window.onload=function(){
 			}
 		});
 	});
+	/**
+	 * 保存个人信息
+	 */
+	$("#personalInforsSubmit").click(function() {
+		var realName = $("input[name='realName']").val();
+		var birth = $("input[name='birth']").val();
+		var sex = $("input[name='sex']:checked").val();
+		var signature = $("textarea[name='signature']").val();
+		var url = "userAjax_saveUserPersonalInfors.do";
+		var args={"realName":realName,"birth":birth,"sex":sex,"signature":signature};
+		$.ajax({
+			url:url,
+			data:args,
+			type:"post",
+			dataType:"json",
+			success:function(msg){
+				alert(msg)
+			},error:function(){
+				
+			}
+		});
+		return false;
+	});
+	/**
+	 * 修改密码
+	 */
+	$("#changePasswordSubmit").click(function() {
+		var oldPassword = $("input[name='oldPassword']").val();
+		var newPassword = $("input[name='newPassword']").val();
+		var confirmPassword = $("input[name='confirmPassword']").val();
+		
+		var url = "userAjax_changeUserPassword.do";
+		var args={"oldPassword":oldPassword,"newPassword":newPassword,"confirmPassword":confirmPassword};
+		$.ajax({
+			url:url,
+			data:args,
+			type:"post",
+			dataType:"json",
+			success:function(msg){
+				alert(msg);
+				$("input[name='oldPassword']").val("");
+				$("input[name='newPassword']").val("");
+				$("input[name='confirmPassword']").val("");
+			},error:function(){
+				
+			}
+		});
+		return false;
+	});
 	
+	/**
+	 * 动态赞成
+	 */
+	$("#approveBtn").click(function() {
+		if (user == "") {
+			alert("请登录");
+			return false;
+		}
+		var dynamticId = $(this).attr("href");
+		var url = "userDynamticAjax_approveUserDynamtic.action";
+		var count = $(this).children().text() - 0;
+		count++;
+		$(this).children().text(count);
+		var type = "approve";
+		var args={"dynamticId":dynamticId, "count":count, "type":type};
+		saveApproveCount(url, args, type);
+		return false;
+	});
+	/**
+	 * 动态不赞成
+	 */
+	$("#notApproveBtn").click(function() {
+		if (user == "") {
+			alert("请登录");
+			return false;
+		}
+		var dynamticId = $(this).attr("href");
+		var url = "userDynamticAjax_approveUserDynamtic.action";
+		var count = $(this).children().text() - 0;
+		count++;
+		$(this).children().text(count);
+		var type = "notApprove";
+		var args={"dynamticId":dynamticId, "count":count, "type":type};
+		saveApproveCount(url, args);
+		return false;
+	});
+	
+	function saveApproveCount(url, args, type) {
+		$.ajax({
+			url:url,
+			data:args,
+			type:"post",
+			dataType:"json",
+			success:function(msg){
+				alert(msg);
+			},error:function(){
+				alert("服务器错误");
+			}
+		});
+	}
 };

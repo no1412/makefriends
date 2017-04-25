@@ -25,6 +25,7 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath }/js/cropbox.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath }/js/myjs-person.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath }/js/myValidator.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath }/js/myAjax.js"></script>
 	
 	<script>
 		new WOW().init();
@@ -94,7 +95,7 @@
 											<a href="${pageContext.request.contextPath }/user_getMyCollections.do" class="my-sns l">个人中心</a>
 										</div>
 										<div class="card-sets clearfix">
-											<a href="${pageContext.request.contextPath }/view/accountSetting.jsp" class="l">账号设置</a>
+											<a href="${pageContext.request.contextPath }/user_seeMyAccountSetting.do" class="l">账号设置</a>
 											<a href="${pageContext.request.contextPath }/user_logOut.action" class="r">退出</a>
 										</div>
 									</div>
@@ -198,7 +199,7 @@
 				</div> --%>
 				<div class="bottom_div" style="background-color: #337AB7;">
 					<p style="color: white;">
-						<a href="#" style="color: white;"><span class="icon-cog">&nbsp;账号设置</span></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="${pageContext.request.contextPath }/user_seeMyAccountSetting.do" style="color: white;"><span class="icon-cog">&nbsp;账号设置</span></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<span class="icon-chevron-right"></span>
 					</p>
 				</div>
@@ -223,23 +224,23 @@
 				</ul>
 				<div class="tab-content">
 					<div class="tab-pane fade in active middleDiv" id="xw1">
-						<form id="baseInfo" action="#" class="form-horizontal" method="post">
+						<form id="baseInfo" action="${pageContext.request.contextPath }/user_saveUserBasicInfos.do" class="form-horizontal" method="post">
 							<div class="form-group">
 								<label class="col-md-3 control-label formLabel">昵 称</label>
 								<div class="col-md-7">
-									<input type="text" name="username" class="form-control input-lg" value="<s:property value="#session.user.nickName"/>" placeholder="请输入昵称" />
+									<input type="text" name="nickName" class="form-control input-lg" value="<s:property value="#session.user.nickName"/>" placeholder="请输入昵称" />
 								</div>
 							</div>
 							<div class="form-group">
 								<label class="col-md-3 control-label formLabel">邮 箱</label>
 								<div class="col-md-7">
-									<input type="text" name="email" class="form-control input-lg" value="" placeholder="请输入邮箱" />
+									<input type="text" name="email" class="form-control input-lg" value="<s:property value="#session.user.email"/>" placeholder="请输入邮箱" />
 								</div>
 							</div>
 							<div class="form-group">
 								<label class="col-md-3 control-label formLabel">手机号</label>
 								<div class="col-md-7">
-									<input type="text" name="phoneNumber" class="form-control input-lg" value="" placeholder="请输入手机号" />
+									<input type="text" name="phoneNum" class="form-control input-lg" value="<s:property value="#session.user.phoneNum"/>" placeholder="请输入手机号" />
 								</div>
 							</div>
 							<div class="form-group">
@@ -254,10 +255,10 @@
 							<div class="form-group">
 								<label class="col-md-3 control-label formLabel">真实姓名</label>
 								<div class="col-md-7">
-									<input type="text" name="truename" class="form-control input-lg" value="" placeholder="请输入真实姓名" />
+									<input type="text" name="realName" class="form-control input-lg" value="<s:property value="#session.user.userRealName"/>" placeholder="请输入真实姓名" />
 								</div>
 							</div>
-							<div class="form-group">
+							<%-- <div class="form-group">
 								<label class="col-md-3 control-label formLabel">职 位</label>
 								<div class="col-md-7">
 									<select class="form-control input-lg">
@@ -281,11 +282,11 @@
 								<script type="text/javascript">
 									_init_area();
 								</script>
-							</div>
+							</div> --%>
 							<div class="form-group">
 								<label class="col-md-3 control-label formLabel">生 日</label>
 								<div class="col-md-7">
-									<input type="date" name="birthday" class="form-control input-lg" value="1999-01-01"/>
+									<input type="date" name="birth" class="form-control input-lg" value="<s:property value="#session.user.getBirthTime()"/>"/>
 								</div>
 							</div>
 							<div class="form-group">
@@ -293,17 +294,32 @@
 								<div class="col-lg-7">
 									<div class="radio">
 										<label>
-											<input type="radio" checked="checked" name="gender" value="male" /> 保 密
+										    <s:if test="#session.user.sex=='unknow'">
+										        <input type="radio" checked="checked" name="sex" value="unknow" /> 保 密
+										    </s:if>
+										    <s:else>
+												<input type="radio" name="sex" value="unknow" /> 保 密
+										    </s:else>
 										</label>
 									</div>
 									<div class="radio">
 										<label>
-											<input type="radio" name="gender" value="male" /> 帅 哥
+										    <s:if test="#session.user.sex=='male'">
+										        <input type="radio" checked="checked" name="sex" value="male" /> 帅 哥
+										    </s:if>
+										    <s:else>
+												<input type="radio" name="sex" value="male" /> 帅 哥
+										    </s:else>
 										</label>
 									</div>
 									<div class="radio">
 										<label>
-											<input type="radio" name="gender" value="female" /> 美 女
+										    <s:if test="#session.user.sex=='female'">
+                                                <input type="radio" checked="checked" name="sex" value="female" /> 美 女
+                                            </s:if>
+                                            <s:else>
+                                                <input type="radio" name="sex" value="female" /> 美 女
+                                            </s:else>
 										</label>
 									</div>
 								</div>
@@ -316,13 +332,13 @@
 							</div>
 							<div class="form-group">
 								<div class="col-md-12 col-lg-offset-4">
-									<button type="submit" class="button button-raised button-glow button-primary button-rounded">保 存</button>
+									<button id="personalInforsSubmit" type="submit" class="button button-raised button-glow button-primary button-rounded">保 存</button>
 								</div>
 							</div>
 						</form>
 					</div>
 					<div class="tab-pane fade middleDiv" id="xw3">
-						<form id="passwordInfo" action="#" class="form-horizontal" method="post">
+						<form id="passwordInfo" action="${pageContext.request.contextPath }/user_changeUserPassword.do" class="form-horizontal" method="post">
 							<div class="form-group">
 								<label class="col-md-3 control-label formLabel">当前密码</label>
 								<div class="col-md-7">
@@ -343,7 +359,7 @@
 							</div>
 							<div class="form-group">
 								<div class="col-md-12 col-lg-offset-4">
-									<button type="submit" class="button button-raised button-glow button-primary button-rounded">保 存</button>
+									<button id="changePasswordSubmit" type="submit" class="button button-raised button-glow button-primary button-rounded">保 存</button>
 								</div>
 							</div>
 						</form>

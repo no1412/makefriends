@@ -96,7 +96,7 @@
 											<a href="${pageContext.request.contextPath }/user_getMyCollections.do" class="my-sns l">个人中心</a>
 										</div>
 										<div class="card-sets clearfix">
-											<a href="${pageContext.request.contextPath }/view/accountSetting.jsp" class="l">账号设置</a>
+											<a href="${pageContext.request.contextPath }/user_seeMyAccountSetting.do" class="l">账号设置</a>
 											<a href="${pageContext.request.contextPath }/user_logOut.action" class="r">退出</a>
 										</div>
 									</div>

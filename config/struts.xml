@@ -13,6 +13,10 @@
 			<result name="login" type="redirect">/view/index.jsp</result>
 			<result name="getMyCollections">/view/personalCenter.jsp</result>
 			<result name="seeMyGroups">/view/myGroups.jsp</result>
+			<result name="seeMyAccountSetting">/view/accountSetting.jsp</result>
+			<result name="saveUserBasicInfos" type="redirectAction">user_seeMyAccountSetting</result>
+			<result name="saveUserPersonalInfors" type="redirectAction">user_seeMyAccountSetting</result>
+			<result name="changeUserPassword" type="redirectAction">user_seeMyAccountSetting</result>
 		</action>
 
 		<action name="interest_*" method="{1}" class="com.friends.action.InterestAction">
@@ -27,7 +31,7 @@
 		    </interceptor-ref>
 		    <interceptor-ref name="defaultStack"></interceptor-ref>
 			<result name="success">/view/interestGroup.jsp</result>
-			<result name="saveCreatedInterestGroup" type="redirect">/view/interestGroup.jsp</result>
+			<result name="saveCreatedInterestGroup" type="redirectAction">user_seeMyGroups</result>
 			<result name="createInterestGroup">/view/createInterestGroup.jsp</result>
 		</action>
 		

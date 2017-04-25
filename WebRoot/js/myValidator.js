@@ -109,7 +109,7 @@ $(document).ready(function() {
 			validating: 'glyphicon glyphicon-refresh'
 		},
 		fields: {
-			username: {
+			nickName: {
 				validators: {
 					notEmpty: {
 						message: '昵称不能为空'
@@ -128,7 +128,7 @@ $(document).ready(function() {
 					}
 				}
 			},
-			phoneNumber: {
+			phoneNum: {
 				validators: {
 					digits: {
 						message: '无效的手机号'
@@ -150,7 +150,7 @@ $(document).ready(function() {
 			validating: 'glyphicon glyphicon-refresh'
 		},
 		fields: {
-			truename: {
+			realName: {
 				validators: {
 					stringLength: {
 						min: 2,
@@ -168,7 +168,7 @@ $(document).ready(function() {
 					},
 				}
 			},
-			birthday: {
+			birth: {
                 validators: {
                     date: {
                         format: 'YYYY-MM-DD',

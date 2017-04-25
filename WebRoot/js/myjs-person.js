@@ -183,7 +183,24 @@ $(window).load(function() {
 		 *头像上传 
 		 */
 		var img = cropper.getDataURL();
-		console.log(img);
+		
+		var url = "userAjax_changeUserHeadPic.do";
+		var args={"img":img};
+		$.ajax({
+			url:url,
+			data:args,
+			type:"post",
+			dataType:"json",
+			success:function(msg){
+				alert(msg);
+				$("input[name='oldPassword']").val("");
+				$("input[name='newPassword']").val("");
+				$("input[name='confirmPassword']").val("");
+				window.location.href=window.document.location.href;
+			},error:function(){
+				
+			}
+		});
 	})
 });
 /**

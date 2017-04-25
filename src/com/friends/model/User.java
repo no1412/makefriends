@@ -1,5 +1,6 @@
 package com.friends.model;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Set;
 
@@ -132,5 +133,10 @@ public class User {
     }
     public void setUserRealName(String userRealName) {
         this.userRealName = userRealName;
+    }
+
+    public String getBirthTime() {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        return sdf.format(getBirth());
     }
 }

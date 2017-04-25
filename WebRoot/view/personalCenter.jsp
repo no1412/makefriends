@@ -92,7 +92,7 @@
 											<a href="${pageContext.request.contextPath }/user_getMyCollections.do" class="my-sns l">个人中心</a>
 										</div>
 										<div class="card-sets clearfix">
-											<a href="${pageContext.request.contextPath }/view/accountSetting.jsp" class="l">账号设置</a>
+											<a href="${pageContext.request.contextPath }/user_seeMyAccountSetting.do" class="l">账号设置</a>
 											<a href="${pageContext.request.contextPath }/user_logOut.action" class="r">退出</a>
 										</div>
 									</div>
@@ -160,7 +160,7 @@
 					<a href="#" style="margin-left: 10px;margin-right: 40px;">经验:<b id="js-user-credit"><s:property value="#session.user.experience"/></b></a>
 					<a href="#" title="我的收藏"><span class="icon-heart icon-large"></span></a>
 					<%-- <a href="${pageContext.request.contextPath }/view/myMessages.jsp" title="我的消息"><span class="icon-envelope-alt icon-large"></span></a> --%>
-					<a href="${pageContext.request.contextPath }/view/accountSetting.jsp" title="账户设置"><span class="icon-cog icon-large"></span></a>
+					<a href="${pageContext.request.contextPath }/user_seeMyAccountSetting.do" title="账户设置"><span class="icon-cog icon-large"></span></a>
 				</div>
 			</div>
 			<div class="middle_left_bottom">
@@ -197,7 +197,7 @@
 				</div> --%>
 				<div class="bottom_div">
 					<p>
-						<a href="${pageContext.request.contextPath }/view/accountSetting.jsp"><span class="icon-cog">&nbsp;账号设置</span></a>
+						<a href="${pageContext.request.contextPath }/user_seeMyAccountSetting.do"><span class="icon-cog">&nbsp;账号设置</span></a>
 					</p>
 				</div>
 			</div>
@@ -213,7 +213,7 @@
 					<h3 class="h3 right_h3"><s:property value="#interestGroup.groupName"/></h3>
 					<hr class="right_hr" />
 					<div class="right_imgdiv">
-						<a href="${pageContext.request.contextPath }/interestGroup_seeInterestGroup.action?interestGroupId=<s:property value='#interestGroup.id'/>"><img class="right_img" src="${pageContext.request.contextPath }/img/1.jpg" /></a>
+						<a href="${pageContext.request.contextPath }/interestGroup_seeInterestGroup.action?interestGroupId=<s:property value='#interestGroup.id'/>"><img class="right_img" src="${pageContext.request.contextPath }/<s:property value='#interestGroup.groupBg'/>" /></a>
 					</div>
 					<p class="right_p">
 						<s:property value="#interestGroup.groupDesc"/>

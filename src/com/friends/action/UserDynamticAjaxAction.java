@@ -35,7 +35,14 @@ public class UserDynamticAjaxAction extends BaseAction<UserDynamic> implements S
 	public void setResult(String result) {
 		this.result = result;
 	}
-	
+	/**
+	 * @Title: deleteUserDynamtic 
+	 * @Description: TODO(删除用户动态) 
+	 * @param @return
+	 * @param @throws Exception    设定文件 
+	 * @return String    返回类型 
+	 * @throws
+	 */
 	public String deleteUserDynamtic() throws Exception{
 	    String userDynamticId = request.getParameter("userDynamticId");
 	    if (!StringUtil.isEmpty(userDynamticId)) {
@@ -47,6 +54,33 @@ public class UserDynamticAjaxAction extends BaseAction<UserDynamic> implements S
 	        result = mapper.writeValueAsString("删除成功");
         }
 		return SUCCESS;
+	}
+	/**
+	 * @Title: approveUserDynamtic 
+	 * @Description: TODO(添加对动态的点赞) 
+	 * @param @return    设定文件 
+	 * @return String    返回类型 
+	 * @throws
+	 */
+	public String approveUserDynamtic() throws Exception {
+	    String dynamticId = request.getParameter("dynamticId");
+	    String count = request.getParameter("count");
+	    String type = request.getParameter("type");
+	    ObjectMapper mapper = new ObjectMapper();
+	    if (!StringUtil.isEmpty(dynamticId) && !StringUtil.isEmpty(count) && !StringUtil.isEmpty(type)) {
+            UserDynamic userDynamic = this.userDynamticService.getById(Integer.parseInt(dynamticId));
+            if (type.equals("approve")) {
+                userDynamic.setApproveCount(Integer.parseInt(count));
+            } else {
+                userDynamic.setNotApproveCount(Integer.parseInt(count));
+            }
+            this.userDynamticService.update(userDynamic);
+            result = mapper.writeValueAsString("点赞成功");
+        } else {
+            result = mapper.writeValueAsString("点赞失败");
+        }
+	    
+	    return SUCCESS;
 	}
 	public void setServletRequest(HttpServletRequest hsq) {
 		request=hsq;

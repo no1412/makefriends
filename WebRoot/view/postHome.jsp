@@ -37,6 +37,8 @@
 	<script>
 		new WOW().init();
 		getTop();
+        //初试化js的当前user对象
+        var user = "${session.user}";
 	</script>
 	<!--[if lt IE 9]>
 	    <script src="http://static.sfcdn.org/dep/js/html5shiv.min.js"></script>
@@ -103,7 +105,7 @@
 											<a href="${pageContext.request.contextPath }/user_getMyCollections.do" class="my-sns l">个人中心</a>
 										</div>
 										<div class="card-sets clearfix">
-											<a href="${pageContext.request.contextPath }/view/accountSetting.jsp" class="l">账号设置</a>
+											<a href="${pageContext.request.contextPath }/user_seeMyAccountSetting.do" class="l">账号设置</a>
 											<a href="${pageContext.request.contextPath }/user_logOut.action" class="r">退出</a>
 										</div>
 									</div>
@@ -344,8 +346,8 @@
 			<img src="${pageContext.request.contextPath }/img/205.jpg" class="post_img" />
 		</div> --%>
 		<div class="button-group" style="width: 900px;margin: 30px 0px 20px 295px;">
-			<a href="#" class="button button-pill button-primary button-raised"><b class="icon-thumbs-up icon-large">（<s:property value="#request.userDynamic.approveCount" />）</b></a>
-			<a href="#" class="button button-pill button-primary button-raised"><b class=" icon-thumbs-down icon-large">（<s:property value="#request.userDynamic.notApproveCount" />）</b></a>
+			<a id="approveBtn" href="<s:property value="#request.userDynamic.id" />" class="button button-pill button-primary button-raised"><b class="icon-thumbs-up icon-large"><s:property value="#request.userDynamic.approveCount" /></b></a>
+			<a id="notApproveBtn" href="<s:property value="#request.userDynamic.id" />" class="button button-pill button-primary button-raised"><b class=" icon-thumbs-down icon-large"><s:property value="#request.userDynamic.notApproveCount" /></b></a>
 		</div>
 	</div>
 
