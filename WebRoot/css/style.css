@@ -53,7 +53,9 @@ input {
 	float: left;
 	margin-right: 20px;
 }
-
+.home_imgs h3, p {
+	font-family: 微软雅黑;
+}
 
 
 /*右下角流动框*/
@@ -140,7 +142,9 @@ input {
 	text-align:center; 
 	-webkit-transform:translateY(-50%);
 }
-
+.in_div h4,h5 {
+	font-family: 微软雅黑;
+}
 
 
 /*

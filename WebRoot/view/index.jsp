@@ -273,11 +273,10 @@
 			<!--下面有12个div-->
 			<div class="in_div">
 				<a href="#">
-					<div class="img" style="background-image:url(${pageContext.request.contextPath }/img/f.jpg)"></div>
+					<div class="img" style="background-image:url(${pageContext.request.contextPath }/img/life.jpg)"></div>
 					<div class="mask">
 						<div class="info">
-							<h1>findFriend</h1>
-							<h2>寻友 V1.0</h2>
+							<h4>感受生活<br/>享受人生</h4>
 						</div>
 					</div>
 					<div class="border"></div>
@@ -285,73 +284,10 @@
 			</div>
 			<div class="in_div">
 				<a href="#">
-					<div class="img" style="background-image:url(${pageContext.request.contextPath }/img/a.jpg)"></div>
+					<div class="img" style="background-image:url(${pageContext.request.contextPath }/img/travel.jpg)"></div>
 					<div class="mask">
 						<div class="info">
-							<h1>findFriend</h1>
-							<h2>寻友 V1.0</h2>
-						</div>
-					</div>
-					<div class="border"></div>
-				</a>
-			</div>
-			<div class="in_div">
-				<div class="little_div">
-					<a href="#">
-						<div class="img_min" style="background-image:url(${pageContext.request.contextPath }/img/b.jpg)"></div>
-						<div class="mask_min">
-							<div class="info_min">
-								<h4>findFriend</h4>
-								<h5>寻友 V1.1</h5>
-							</div>
-						</div>
-						<div class="border_min"></div>
-					</a>
-				</div>
-				<div class="little_div">
-					<a href="#">
-						<div class="img_min" style="background-image:url(${pageContext.request.contextPath }/img/c.jpg)"></div>
-						<div class="mask_min">
-							<div class="info_min">
-								<h4>findFriend</h4>
-								<h5>寻友 V1.2</h5>
-							</div>
-						</div>
-						<div class="border_min"></div>
-					</a>
-				</div>
-				<div class="little_div">
-					<a href="#">
-						<div class="img_min" style="background-image:url(${pageContext.request.contextPath }/img/d.jpg)"></div>
-						<div class="mask_min">
-							<div class="info_min">
-								<h4>findFriend</h4>
-								<h5>寻友 V1.3</h5>
-							</div>
-						</div>
-						<div class="border_min"></div>
-					</a>
-				</div>
-				<div class="little_div">
-					<a href="#">
-						<div class="img_min" style="background-image:url(${pageContext.request.contextPath }/img/e.jpg)"></div>
-						<div class="mask_min">
-							<div class="info_min">
-								<h4>findFriend</h4>
-								<h5>寻友 V1.4</h5>
-							</div>
-						</div>
-						<div class="border_min"></div>
-					</a>
-				</div>
-			</div>
-			<div class="in_div">
-				<a href="#">
-					<div class="img" style="background-image:url(${pageContext.request.contextPath }/img/head.jpg)"></div>
-					<div class="mask">
-						<div class="info">
-							<h1>findFriend</h1>
-							<h2>寻友 V1.0</h2>
+							<h4>旅行<br/>走遍天下</h4>
 						</div>
 					</div>
 					<div class="border"></div>
@@ -360,11 +296,10 @@
 			<div class="in_div">
 				<div class="little_div">
 					<a href="#">
-						<div class="img_min" style="background-image:url(${pageContext.request.contextPath }/img/i.jpg)"></div>
+						<div class="img_min" style="background-image:url(${pageContext.request.contextPath }/img/food.jpg)"></div>
 						<div class="mask_min">
 							<div class="info_min">
-								<h4>findFriend</h4>
-								<h5>寻友 V1.0</h5>
+								<h5>美食<br/>小蛋糕</h5>
 							</div>
 						</div>
 						<div class="border_min"></div>
@@ -372,11 +307,10 @@
 				</div>
 				<div class="little_div">
 					<a href="#">
-						<div class="img_min" style="background-image:url(${pageContext.request.contextPath }/img/j.jpg)"></div>
+						<div class="img_min" style="background-image:url(${pageContext.request.contextPath }/img/sushi.jpg)"></div>
 						<div class="mask_min">
 							<div class="info_min">
-								<h4>findFriend</h4>
-								<h5>寻友 V1.0</h5>
+								<h5>感受寿司的美味</h5>
 							</div>
 						</div>
 						<div class="border_min"></div>
@@ -384,11 +318,10 @@
 				</div>
 				<div class="little_div">
 					<a href="#">
-						<div class="img_min" style="background-image:url(${pageContext.request.contextPath }/img/k.jpg)"></div>
+						<div class="img_min" style="background-image:url(${pageContext.request.contextPath }/img/pizza.jpg)"></div>
 						<div class="mask_min">
 							<div class="info_min">
-								<h4>findFriend</h4>
-								<h5>寻友 V1.0</h5>
+								<h5>披萨的美味</h5>
 							</div>
 						</div>
 						<div class="border_min"></div>
@@ -396,11 +329,10 @@
 				</div>
 				<div class="little_div">
 					<a href="#">
-						<div class="img_min" style="background-image:url(${pageContext.request.contextPath }/img/a.jpg)"></div>
+						<div class="img_min" style="background-image:url(${pageContext.request.contextPath }/img/seafood.jpg)"></div>
 						<div class="mask_min">
 							<div class="info_min">
-								<h4>findFriend</h4>
-								<h5>寻友 V1.0</h5>
+								<h5>海鲜</h5>
 							</div>
 						</div>
 						<div class="border_min"></div>
@@ -409,11 +341,67 @@
 			</div>
 			<div class="in_div">
 				<a href="#">
-					<div class="img" style="background-image:url(${pageContext.request.contextPath }/img/e.jpg)"></div>
+					<div class="img" style="background-image:url(${pageContext.request.contextPath }/img/literary.jpg)"></div>
 					<div class="mask">
 						<div class="info">
-							<h1>findFriend</h1>
-							<h2>寻友 V1.0</h2>
+							<h5>变成一个文艺范</h5>
+						</div>
+					</div>
+					<div class="border"></div>
+				</a>
+			</div>
+			<div class="in_div">
+				<div class="little_div">
+					<a href="#">
+						<div class="img_min" style="background-image:url(${pageContext.request.contextPath }/img/christmas.jpg)"></div>
+						<div class="mask_min">
+							<div class="info_min">
+								<h5>圣诞节</h5>
+							</div>
+						</div>
+						<div class="border_min"></div>
+					</a>
+				</div>
+				<div class="little_div">
+					<a href="#">
+						<div class="img_min" style="background-image:url(${pageContext.request.contextPath }/img/cat.jpg)"></div>
+						<div class="mask_min">
+							<div class="info_min">
+								<h5>喵~</h5>
+							</div>
+						</div>
+						<div class="border_min"></div>
+					</a>
+				</div>
+				<div class="little_div">
+					<a href="#">
+						<div class="img_min" style="background-image:url(${pageContext.request.contextPath }/img/dog.jpg)"></div>
+						<div class="mask_min">
+							<div class="info_min">
+								<h5>汪~</h5>
+							</div>
+						</div>
+						<div class="border_min"></div>
+					</a>
+				</div>
+				<div class="little_div">
+					<a href="#">
+						<div class="img_min" style="background-image:url(${pageContext.request.contextPath }/img/cat2.jpg)"></div>
+						<div class="mask_min">
+							<div class="info_min">
+								<h5>唔~</h5>
+							</div>
+						</div>
+						<div class="border_min"></div>
+					</a>
+				</div>
+			</div>
+			<div class="in_div">
+				<a href="#">
+					<div class="img" style="background-image:url(${pageContext.request.contextPath }/img/fresh.jpg)"></div>
+					<div class="mask">
+						<div class="info">
+							<h4>来点小清新</h4>
 						</div>
 					</div> 
 					<div class="border"></div>
@@ -422,11 +410,10 @@
 			
 			<div class="in_div">
 				<a href="#">
-					<div class="img" style="background-image:url(${pageContext.request.contextPath }/img/b.jpg)"></div>
+					<div class="img" style="background-image:url(${pageContext.request.contextPath }/img/program.jpg)"></div>
 					<div class="mask">
 						<div class="info">
-							<h1>findFriend</h1>
-							<h2>寻友 V1.0</h2>
+							<h4>感受编程的乐趣</h4>
 						</div>
 					</div>
 					<div class="border"></div>
@@ -435,11 +422,10 @@
 			<div class="in_div">
 				<div class="little_div">
 					<a href="#">
-						<div class="img_min" style="background-image:url(${pageContext.request.contextPath }/img/e.jpg)"></div>
+						<div class="img_min" style="background-image:url(${pageContext.request.contextPath }/img/sao.jpg)"></div>
 						<div class="mask_min">
 							<div class="info_min">
-								<h4>findFriend</h4>
-								<h5>寻友 V1.0</h5>
+								<h5>刀剑神域</h5>
 							</div>
 						</div>
 						<div class="border_min"></div>
@@ -447,11 +433,10 @@
 				</div>
 				<div class="little_div">
 					<a href="#">
-						<div class="img_min" style="background-image:url(${pageContext.request.contextPath }/img/f.jpg)"></div>
+						<div class="img_min" style="background-image:url(${pageContext.request.contextPath }/img/shooter.jpg)"></div>
 						<div class="mask_min">
 							<div class="info_min">
-								<h4>findFriend</h4>
-								<h5>寻友 V1.0</h5>
+								<h5>黑岩射手</h5>
 							</div>
 						</div>
 						<div class="border_min"></div>
@@ -459,11 +444,10 @@
 				</div>
 				<div class="little_div">
 					<a href="#">
-						<div class="img_min" style="background-image:url(${pageContext.request.contextPath }/img/head.jpg)"></div>
+						<div class="img_min" style="background-image:url(${pageContext.request.contextPath }/img/hatsune.jpg)"></div>
 						<div class="mask_min">
 							<div class="info_min">
-								<h4>findFriend</h4>
-								<h5>寻友 V1.0</h5>
+								<h5>初音</h5>
 							</div>
 						</div>
 						<div class="border_min"></div>
@@ -471,11 +455,10 @@
 				</div>
 				<div class="little_div">
 					<a href="#">
-						<div class="img_min" style="background-image:url(${pageContext.request.contextPath }/img/h.jpg)"></div>
+						<div class="img_min" style="background-image:url(${pageContext.request.contextPath }/img/evil.jpg)"></div>
 						<div class="mask_min">
 							<div class="info_min">
-								<h4>findFriend</h4>
-								<h5>寻友 V1.0</h5>
+								<h5>罪恶王冠</h5>
 							</div>
 						</div>
 						<div class="border_min"></div>
@@ -484,11 +467,10 @@
 			</div>
 			<div class="in_div">
 				<a href="#">
-					<div class="img" style="background-image:url(${pageContext.request.contextPath }/img/c.jpg)"></div>
+					<div class="img" style="background-image:url(${pageContext.request.contextPath }/img/book.jpg)"></div>
 					<div class="mask">
 						<div class="info">
-							<h1>findFriend</h1>
-							<h2>寻友 V1.0</h2>
+							<h4>学习新知识</h4>
 						</div>
 					</div>
 					<div class="border"></div>
@@ -498,11 +480,10 @@
 			<div class="in_div">
 				<div class="little_div">
 					<a href="#">
-						<div class="img_min" style="background-image:url(${pageContext.request.contextPath }/img/c.jpg)"></div>
+						<div class="img_min" style="background-image:url(${pageContext.request.contextPath }/img/crysis.jpg)"></div>
 						<div class="mask_min">
 							<div class="info_min">
-								<h4>findFriend</h4>
-								<h5>寻友 V1.4</h5>
+								<h5>孤岛危机</h5>
 							</div>
 						</div>
 						<div class="border_min"></div>
@@ -510,11 +491,10 @@
 				</div>
 				<div class="little_div">
 					<a href="#">
-						<div class="img_min" style="background-image:url(${pageContext.request.contextPath }/img/d.jpg)"></div>
+						<div class="img_min" style="background-image:url(${pageContext.request.contextPath }/img/lol.jpg)"></div>
 						<div class="mask_min">
 							<div class="info_min">
-								<h4>findFriend</h4>
-								<h5>寻友 V1.3</h5>
+								<h5>英雄联盟</h5>
 							</div>
 						</div>
 						<div class="border_min"></div>
@@ -522,11 +502,10 @@
 				</div>
 				<div class="little_div">
 					<a href="#">
-						<div class="img_min" style="background-image:url(${pageContext.request.contextPath }/img/e.jpg)"></div>
+						<div class="img_min" style="background-image:url(${pageContext.request.contextPath }/img/crisis.jpg)"></div>
 						<div class="mask_min">
 							<div class="info_min">
-								<h4>findFriend</h4>
-								<h5>寻友 V1.2</h5>
+								<h5>生化危机</h5>
 							</div>
 						</div>
 						<div class="border_min"></div>
@@ -534,11 +513,10 @@
 				</div>
 				<div class="little_div">
 					<a href="#">
-						<div class="img_min" style="background-image:url(${pageContext.request.contextPath }/img/a.jpg)"></div>
+						<div class="img_min" style="background-image:url(${pageContext.request.contextPath }/img/needspeed.jpg)"></div>
 						<div class="mask_min">
 							<div class="info_min">
-								<h4>findFriend</h4>
-								<h5>寻友 V1.1</h5>
+								<h5>极品飞车</h5>
 							</div>
 						</div>
 						<div class="border_min"></div>
@@ -547,11 +525,10 @@
 			</div>
 			<div class="in_div">
 				<a href="#">
-					<div class="img" style="background-image:url(${pageContext.request.contextPath }/img/d.jpg)"></div>
+					<div class="img" style="background-image:url(${pageContext.request.contextPath }/img/threelife.jpg)"></div>
 					<div class="mask">
 						<div class="info">
-							<h1>findFriend</h1>
-							<h2>寻友 V1.0</h2>
+							<h4>三生三世,十里桃花</h4>
 						</div>
 					</div>
 					<div class="border"></div>
@@ -559,11 +536,10 @@
 			</div>
 			<div class="in_div">
 				<a href="#">
-					<div class="img" style="background-image:url(${pageContext.request.contextPath }/img/b.jpg)"></div>
+					<div class="img" style="background-image:url(${pageContext.request.contextPath }/img/tombnote.jpg)"></div>
 					<div class="mask">
 						<div class="info">
-							<h1>findFriend</h1>
-							<h2>寻友 V1.0</h2>
+							<h4>南派三叔<br/>盗墓笔记</h4>
 						</div>
 					</div>
 					<div class="border"></div>
@@ -579,7 +555,7 @@
 		-->
 	<div class="wow swing" style="align-content:center;width: 99%;" align="center">
 		<h2 class="app-text" style="color:#088EF0;font-family:'微软雅黑';font-style:normal;text-shadow:1px 1px 0 #444">手机App，让生活距离更近些</h2>
-		<a href="#" class="button button-glow button-border button-rounded button-primary button-pill">App</a>
+		<a href="${pageContext.request.contextPath }/app/makefriends.apk" class="button button-glow button-border button-rounded button-primary button-pill">App</a>
 	</div>
 
 	<!--
@@ -597,80 +573,80 @@
 
 		<div class="wow bounceIn hot_div">
 			<div class="thumbnail home_imgs">
-				<img src="${pageContext.request.contextPath }/img/153s.jpg" class="img-rounded" />
+				<img src="${pageContext.request.contextPath }/img/travel.jpg" class="img-rounded" />
 				<div class="caption" align="center">
-					<h3><a>BootStrap</a></h3>
-					<p>天空4</p>
+					<h3><a>旅游</a></h3>
+					<p>感受生活</p>
 				</div>
 			</div>
 		</div>
 
 		<div class="wow bounceIn hot_div">
 			<div class="thumbnail home_imgs">
-				<img src="${pageContext.request.contextPath }/img/153s.jpg" class="img-rounded" />
+				<img src="${pageContext.request.contextPath }/img/food.jpg" class="img-rounded" />
 				<div class="caption" align="center">
-					<h3><a>BootStrap</a></h3>
-					<p>天空4</p>
+					<h3><a>美食</a></h3>
+					<p>享受美味</p>
 				</div>
 			</div>
 		</div>
 
 		<div class="wow bounceIn hot_div">
 			<div class="thumbnail home_imgs">
-				<img src="${pageContext.request.contextPath }/img/153s.jpg" class="img-rounded" />
+				<img src="${pageContext.request.contextPath }/img/cat.jpg" class="img-rounded" />
 				<div class="caption" align="center">
-					<h3><a>BootStrap</a></h3>
-					<p>天空4</p>
+					<h3><a>萌宠 </a></h3>
+					<p>喜欢小动物</p>
 				</div>
 			</div>
 		</div>
 
 		<div class="wow bounceIn hot_div">
 			<div class="thumbnail home_imgs">
-				<img src="${pageContext.request.contextPath }/img/168s.jpg" class="img-rounded" />
+				<img src="${pageContext.request.contextPath }/img/acg.jpg" class="img-rounded" />
 				<div class="caption" align="center">
-					<h3><a>BootStrap</a></h3>
-					<p>天空4</p>
+					<h3><a>动漫</a></h3>
+					<p>丰富的动漫角色</p>
 				</div>
 			</div>
 		</div>
 
 		<div class="wow bounceIn hot_div">
 			<div class="thumbnail home_imgs">
-				<img src="${pageContext.request.contextPath }/img/169s.jpg" class="img-rounded" />
+				<img src="${pageContext.request.contextPath }/img/game.jpg" class="img-rounded" />
 				<div class="caption" align="center">
-					<h3><a>BootStrap</a></h3>
-					<p>天空4</p>
+					<h3><a>游戏</a></h3>
+					<p>在游戏的世界畅游</p>
 				</div>
 			</div>
 		</div>
 
 		<div class="wow bounceIn hot_div">
 			<div class="thumbnail home_imgs">
-				<img src="${pageContext.request.contextPath }/img/173s.jpg" class="img-rounded" />
+				<img src="${pageContext.request.contextPath }/img/program.jpg" class="img-rounded" />
 				<div class="caption" align="center">
-					<h3><a>BootStrap</a></h3>
-					<p>天空4</p>
+					<h3><a>编程</a></h3>
+					<p>对代码的热爱</p>
 				</div>
 			</div>
 		</div>
 
 		<div class="wow bounceIn hot_div">
 			<div class="thumbnail home_imgs">
-				<img src="${pageContext.request.contextPath }/img/175s.jpg" class="img-rounded" />
+				<img src="${pageContext.request.contextPath }/img/book.jpg" class="img-rounded" />
 				<div class="caption" align="center">
-					<h3><a>BootStrap</a></h3>
-					<p>天空4</p>
+					<h3><a>书籍</a></h3>
+					<p>不断学习新知识</p>
 				</div>
 			</div>
 		</div>
 
 		<div class="wow bounceIn hot_div">
 			<div class="thumbnail home_imgs">
-				<img src="${pageContext.request.contextPath }/img/173s.jpg" class="img-rounded" />
+				<img src="${pageContext.request.contextPath }/img/life.jpg" class="img-rounded" />
 				<div class="caption" align="center">
-					<h3><a>BootStrap</a></h3>
-					<p>天空4</p>
+					<h3><a>生活</a></h3>
+					<p>发现生活新乐趣</p>
 				</div>
 			</div>
 		</div>
