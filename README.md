@@ -11,4 +11,4 @@
 
 
 
-Demo: http://yourprecious.cn/makeFriends/
+Demo: http://project.yourprecious.cn/makeFriends/
